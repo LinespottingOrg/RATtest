@@ -10,6 +10,18 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      maxWidth: {
+        1440: '1440px',
+      },
+      maxHeight: {
+        1024: '1024px',
+      },
+      width: {
+        mainLogoSize: '350px',
+      },
+      height: {
+        mainLogoSize: '350px',
+      },
     },
   },
   plugins: [require('daisyui')],
