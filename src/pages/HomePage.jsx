@@ -1,6 +1,6 @@
 import React from 'react'
-import RATMainPageHero from '../../components/RATMainPageHero'
-import LASMainPageHero from '../../components/LASMainPageHero'
+import RATMainPageHero from '../components/RATMainPageHero'
+import LASMainPageHero from '../components/LASMainPageHero'
 
 function HomePage() {
   return (

@@ -18,14 +18,27 @@ export default {
       },
       width: {
         mainLogoSize: '350px',
+        testLeftLogoSize: '200px',
+        testRightLogoSize: '150px',
+        '20%': '20%',
+        '80%': '80%',
       },
       height: {
         mainLogoSize: '350px',
+        testLeftLogoSize: '200px',
+        testRightLogoSize: '150px',
       },
     },
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light'],
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#2EB9F2',
+        },
+      },
+    ],
   },
 }
