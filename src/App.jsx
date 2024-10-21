@@ -1,13 +1,19 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import HomePage from './assets/pages/HomePage'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import HomePage from './pages/HomePage'
+import RATTestPage from './pages/RATTestPage'
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </Router>
+    <DndProvider backend={HTML5Backend}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/rat/test" element={<RATTestPage />} />
+        </Routes>
+      </Router>
+    </DndProvider>
   )
 }
 
