@@ -27,6 +27,7 @@ export default {
         mainLogoSize: '350px',
         testLeftLogoSize: '200px',
         testRightLogoSize: '150px',
+        appheight: 1024,
       },
     },
   },

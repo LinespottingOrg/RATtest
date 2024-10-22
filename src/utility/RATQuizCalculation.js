@@ -5,6 +5,8 @@ const calculateResult = (data) => {
     calculateDataResults(splitData(data, 0, 10))
   )
   console.log('Conflict values', calculateDataResults(splitData(data, 10, 20)))
+
+  return calculateDataResults(data)
 }
 
 const splitData = (data, from, until) => {

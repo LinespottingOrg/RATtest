@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React from 'react'
 import { useDrop } from 'react-dnd'
 
 function DroppableInput({ handleRatValueChange, option, currentSetId, data }) {
