@@ -5,7 +5,7 @@ import DroppableInputContainer from './DroppableInputContainer'
 function RATQuestions({ data, currentSetId, handleRatValueChange }) {
   return (
     <div>
-      <h1 className="text-xl font-semibold text-center my-4">
+      <h1 className="md:text-xl font-semibold text-center my-4">
         {data[currentSetId].statement}
       </h1>
       <div className="space-y-4">
@@ -17,7 +17,7 @@ function RATQuestions({ data, currentSetId, handleRatValueChange }) {
         />
       </div>
       <div className="flex my-8">
-        <ul className="flex flex-row w-full">
+        <ul className="flex flex-col md:flex-row w-full">
           <DroppableInputContainer
             data={data}
             currentSetId={currentSetId}

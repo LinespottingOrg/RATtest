@@ -23,30 +23,30 @@ function TestResult({ data }) {
 
   return (
     <div className="w-full mx-auto text-center flex flex-col h-full">
-      <div className="m-2">
+      <div className="m-2 border border-primary">
         <RadarChart results={data} />
         <hr className="border-2 border-primary opacity-50" />
       </div>
-      <div className="flex flex-row flex-grow">
-        <div className="m-2">
+      <div className="flex flex-col md:flex-row flex-grow">
+        <div className="m-2 flex-grow border border-primary">
           <p>Non-conflict</p>
           <p>{nonConflictResults.awarenessType}</p>
           <p>{nonConflictResults.animalType}</p>
           <p>{nonConflictResults.summary}</p>
         </div>
         <div className="hidden md:block w-px h-vh my-5 bg-primary mx-4 blur-sm" />
-        <div className="m-2 flex-grow">
+        <div className="m-2 flex-grow border border-primary">
           <p>Conflict</p>
           <p>{conflictResults.awarenessType}</p>
           <p>{conflictResults.animalType}</p>
           <p>{conflictResults.summary}</p>
         </div>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mx-2">
         <button className="btn btn-primary" onClick={handleStopTestClick}>
           Avsluta test
         </button>
-        <div className="flex flex-row justify-end items-center">
+        <div className="flex flex-row justify-end items-center mx-2">
           <p className="mr-4">Psst...vill du ha resultatet på mail?</p>
           <button className="btn btn-primary">Få Mail</button>
         </div>

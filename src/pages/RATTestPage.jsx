@@ -81,7 +81,7 @@ function RATTestPage() {
   }
 
   return (
-    <div className="flex md:flex-row md:h-1024 max-w-1440 md:mx-auto text-customTextColor font-poppins h-full">
+    <div className="flex md:flex-row md:h-1024 md:max-w-1440 mx-auto text-customTextColor font-poppins h-full">
       <div className="w-20% text-center hidden md:flex flex-col justify-between bg-gradient-to-r from-primary">
         <div>
           <h1 className="text-2xl md:text-2xl mt-2 font-bold">
@@ -97,11 +97,11 @@ function RATTestPage() {
         </div>
       </div>
       {testFinished ? (
-        <div className="w-80%">
+        <div className="md:w-80%">
           <TestResult data={data} />
         </div>
       ) : (
-        <div className="w-80% flex flex-col h-full">
+        <div className="md:w-80% flex flex-col h-full">
           <div className="flex md:flex-row flex-grow">
             <div className="hidden md:block w-20%">
               <div className="mt-auto h-testRightLogoSize w-testRightLogoSize mx-auto">
@@ -113,14 +113,14 @@ function RATTestPage() {
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">
-              <p className="text-xl font-semibold leading-relaxed">
+              <p className="text-l md:text-xl font-semibold leading-relaxed">
                 Testet består av 20 frågor och varje fråga börjar med en
                 ofullständig mening följd av tre alternativ
               </p>
             </div>
           </div>
           <div className="p-4 flex-grow">
-            <p className="text-xl font-semibold leading-relaxed">
+            <p className="text-md md:text-xl font-semibold leading-relaxed">
               Fördela 10 poäng bland de tre alternativen för att belysa din
               ståndpunkt i vart och ett av de tre förslagen.
               <br /> Använd alltid samtliga 10 poäng, aldrig fler eller färre än
@@ -155,7 +155,7 @@ function RATTestPage() {
               )}
 
               <progress
-                className="progress progress-primary w-56 mx-6 self-center"
+                className="progress progress-primary w-24 md:w-56 mx-6 self-center"
                 value={currentSetId}
                 max="20"
               ></progress>

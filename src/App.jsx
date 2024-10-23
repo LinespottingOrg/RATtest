@@ -7,7 +7,7 @@ import RATResultPage from './pages/RATResultPage'
 
 function App() {
   return (
-    <div className="md:max-w-1440 md:h-appheight md:max-h-1024 mx-auto">
+    <div className="w-full h-dvh md:max-w-1440 md:h-appheight md:max-h-1024 mx-auto">
       <DndProvider backend={HTML5Backend}>
         <Router>
           <Routes>
