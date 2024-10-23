@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { useDrop } from 'react-dnd'
 
 function DroppableInput({ handleRatValueChange, option, currentSetId, data }) {
@@ -22,7 +22,7 @@ function DroppableInput({ handleRatValueChange, option, currentSetId, data }) {
   }
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block mb-2 md:mb-0">
       <input
         ref={drop}
         type="text"

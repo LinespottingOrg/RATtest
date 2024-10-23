@@ -3,8 +3,8 @@ import DroppableInput from './DroppableInput'
 
 function DroppableInputContainer({ data, handleRatValueChange, currentSetId }) {
   return (
-    <div className="flex flex-row justify-between mx-2 font-semibold w-full">
-      <div className="flex flex-row">
+    <div className="flex flex-col md:flex-row justify-between mx-2 font-semibold md:w-full">
+      <div className="flex flex-row ">
         <li>
           <DroppableInput
             handleRatValueChange={handleRatValueChange}
@@ -13,7 +13,7 @@ function DroppableInputContainer({ data, handleRatValueChange, currentSetId }) {
             option={'helper'}
           />
         </li>
-        <li className="ml-2 max-w-36">
+        <li className="ml-2 md:max-w-36">
           {data[currentSetId].options.helper.text}
         </li>
       </div>
@@ -26,7 +26,7 @@ function DroppableInputContainer({ data, handleRatValueChange, currentSetId }) {
             option={'influence'}
           />
         </li>
-        <li className="ml-2 max-w-36">
+        <li className="ml-2 md:max-w-36">
           {data[currentSetId].options.influence.text}
         </li>
       </div>
@@ -39,7 +39,7 @@ function DroppableInputContainer({ data, handleRatValueChange, currentSetId }) {
             option={'autonomy'}
           />
         </li>
-        <li className="ml-2 max-w-36">
+        <li className="ml-2 md:max-w-36">
           {data[currentSetId].options.autonomy.text}
         </li>
       </div>

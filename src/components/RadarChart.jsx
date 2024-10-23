@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Radar,
   RadarChart as RC,
@@ -19,6 +19,13 @@ function RadarChart({ results }) {
 
   const nonConflictScores = calculateResult(splitData(results, 0, 10))
   const conflictScores = calculateResult(splitData(results, 10, 20))
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650)
+
+  useEffect(() => {
+    const handleScreenResize = () => setIsSmallScreen(window.innerWidth < 650)
+    window.addEventListener('resize', handleScreenResize)
+    return () => window.removeEventListener('resize', handleScreenResize)
+  })
 
   const data = [
     {
@@ -42,24 +49,30 @@ function RadarChart({ results }) {
   ]
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" aspect={2}>
       <RC cx="50%" cy="70%" outerRadius="100%" data={data}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="name" />
-        <PolarRadiusAxis />
+        <PolarAngleAxis
+          dataKey="name"
+          tick={{
+            width: isSmallScreen ? 60 : 120,
+            fontSize: isSmallScreen ? 11 : 24,
+          }}
+        />
+        <PolarRadiusAxis domain={[0, 100]} angle={30} />
         <Radar
           name="Non Conflict"
           dataKey="uv"
           stroke="#27b857"
           fill="#27b857"
-          fillOpacity={0.6}
+          fillOpacity={0.4}
         />
         <Radar
           name="Conflict"
           dataKey="pv"
           stroke="#8a1e1a"
           fill="#8a1e1a"
-          fillOpacity={0.6}
+          fillOpacity={0.4}
         />
         <Tooltip />
       </RC>

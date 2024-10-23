@@ -46,11 +46,11 @@ function DraggableNumberContainer({ amount, data, currentSetId }) {
 
   return (
     <>
-      <ul className="flex flex-row w-1/2 justify-between mx-auto">
+      <ul className="flex flex-row md:w-1/2 justify-between mx-4 md:mx-auto">
         {renderDraggableNumbers(0, Math.min(amount, 5))}
       </ul>
       {amount > 5 && (
-        <ul className="flex flex-row w-1/2 justify-between mx-auto">
+        <ul className="flex flex-row md:w-1/2 justify-between mx-4 md:mx-auto">
           {renderDraggableNumbers(5, amount)}
         </ul>
       )}
