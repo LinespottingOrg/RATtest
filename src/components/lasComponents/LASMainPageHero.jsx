@@ -1,6 +1,6 @@
 import React from 'react'
-import LASLogo1 from '../assets/LAS_Logo_1.png'
-import StartButton from './StartButton'
+import LASLogo1 from '../../assets/LAS_Logo_1.png'
+import Button from '../Button'
 
 function LASMainPageHero() {
   return (
@@ -25,8 +25,8 @@ function LASMainPageHero() {
         </p>
       </div>
       <div className="mt-auto h-mainLogoSize w-mainLogoSize mx-auto mb-2">
-        <div className="mb-4">
-          <StartButton />
+        <div className="mb-4 mt-2">
+          <Button prompt={'Start Test'} />
         </div>
         <img
           src={LASLogo1}

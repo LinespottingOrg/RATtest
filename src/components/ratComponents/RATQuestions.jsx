@@ -1,6 +1,6 @@
 import React from 'react'
-import DraggableNumberContainer from './DraggableNumberContainer'
-import DroppableInputContainer from './DroppableInputContainer'
+import DraggableNumberContainer from '../DraggableNumberContainer'
+import DroppableInputContainer from '../DroppableInputContainer'
 
 function RATQuestions({ data, currentSetId, handleRatValueChange }) {
   return (

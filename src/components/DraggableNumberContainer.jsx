@@ -6,11 +6,6 @@ function DraggableNumberContainer({ amount, data, currentSetId }) {
 
   useEffect(() => {
     const possibleNumbers = Array.from({ length: amount }, (_, index) => index)
-    console.log('Possible numbers:', possibleNumbers)
-    console.log('CurrentSetId', currentSetId)
-    console.log('Data', data)
-    console.log('CurrentData usedAmount', data[currentSetId].usedAmount)
-
     const validNumbers = possibleNumbers.filter((num) => {
       const remaining = 10 - data[currentSetId].usedAmount
 
@@ -26,8 +21,6 @@ function DraggableNumberContainer({ amount, data, currentSetId }) {
         return num === remaining
       }
     })
-
-    console.log('Valid filtered numbers:', validNumbers)
     setValidNumbers(validNumbers)
   }, [amount, data[currentSetId].usedAmount, data[currentSetId].inputSet])
 

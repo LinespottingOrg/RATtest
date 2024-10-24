@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import RATLogo2 from '../assets/RAT_LOGO_2.png'
-import StartButton from './StartButton'
+import RATLogo2 from '../../assets/RAT_LOGO_2.png'
+import Button from '../Button'
 
 function RATMainPageHero() {
   const navigate = useNavigate()
@@ -34,8 +34,8 @@ function RATMainPageHero() {
       </div>
 
       <div className="h-mainLogoSize w-mainLogoSize mx-auto mb-2">
-        <div className="mb-4">
-          <StartButton onClick={handleStartTestClick} />
+        <div className="mb-4 mt-2">
+          <Button prompt={'Start Test'} onClick={handleStartTestClick} />
         </div>
         <img
           src={RATLogo2}

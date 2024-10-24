@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {
   Radar,
-  RadarChart as RC,
+  RadarChart,
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
@@ -9,16 +9,16 @@ import {
   Tooltip,
 } from 'recharts'
 
-import calculateResult from '../utility/RATQuizCalculation'
+import { setTestResultValues } from '../../utils/ratTestUtils'
 
-function RadarChart({ results }) {
+function RatResultChart({ results }) {
   const splitData = (data, from, until) => {
     const entries = Object.entries(data)
     return Object.fromEntries(entries.slice(from, until))
   }
 
-  const nonConflictScores = calculateResult(splitData(results, 0, 10))
-  const conflictScores = calculateResult(splitData(results, 10, 20))
+  const nonConflictScores = setTestResultValues(splitData(results, 0, 10))
+  const conflictScores = setTestResultValues(splitData(results, 10, 20))
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650)
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function RadarChart({ results }) {
 
   return (
     <ResponsiveContainer width="100%" aspect={2}>
-      <RC cx="50%" cy="70%" outerRadius="100%" data={data}>
+      <RadarChart cx="50%" cy="70%" outerRadius="100%" data={data}>
         <PolarGrid />
         <PolarAngleAxis
           dataKey="name"
@@ -75,9 +75,9 @@ function RadarChart({ results }) {
           fillOpacity={0.4}
         />
         <Tooltip />
-      </RC>
+      </RadarChart>
     </ResponsiveContainer>
   )
 }
 
-export default RadarChart
+export default RatResultChart
