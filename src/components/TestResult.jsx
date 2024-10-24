@@ -1,8 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import RadarChart from '../components/RadarChart'
-import returnAwarenessPattern from '../utility/RATTestSummary'
-import calculateResult from '../utility/RATQuizCalculation'
+import RatResultChart from './ratComponents/RatResultChart'
+import Button from './Button'
+import {
+  setTestResultValues,
+  returnAwarenessPattern,
+} from '../utils/ratTestUtils'
 
 function TestResult({ data }) {
   const navigate = useNavigate()
@@ -11,10 +14,10 @@ function TestResult({ data }) {
     return Object.fromEntries(entries.slice(from, until))
   }
   const nonConflictResults = returnAwarenessPattern(
-    calculateResult(splitData(data, 0, 10))
+    setTestResultValues(splitData(data, 0, 10))
   )
   const conflictResults = returnAwarenessPattern(
-    calculateResult(splitData(data, 10, 20))
+    setTestResultValues(splitData(data, 10, 20))
   )
 
   const handleStopTestClick = () => {
@@ -24,7 +27,7 @@ function TestResult({ data }) {
   return (
     <div className="w-full mx-auto text-center flex flex-col h-full">
       <div className="m-2">
-        <RadarChart results={data} />
+        <RatResultChart results={data} />
         <hr className="border-2 border-primary opacity-50 md:mx-12" />
       </div>
       <div className="flex flex-col md:flex-row flex-grow">
@@ -49,15 +52,10 @@ function TestResult({ data }) {
         </div>
       </div>
       <div className="flex justify-between items-center mx-2">
-        <button
-          className="btn btn-primary text-white"
-          onClick={handleStopTestClick}
-        >
-          Avsluta test
-        </button>
+        <Button prompt={'Avsluta Test'} onClick={handleStopTestClick} />
         <div className="flex flex-row justify-end items-center mx-2">
           <p className="mr-4">Psst...vill du ha resultatet på mail?</p>
-          <button className="btn btn-primary text-white">Få Mail</button>
+          <Button prompt={'Få mail'} />
         </div>
       </div>
       <div className="flex flex-row justify-between m-2 "></div>

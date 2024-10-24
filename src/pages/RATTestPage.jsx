@@ -4,9 +4,10 @@ import RATLogo1 from '../assets/RAT_LOGO_1.png'
 import RATLogo3 from '../assets/RAT_LOGO_3.png'
 import { FaAngleLeft } from 'react-icons/fa6'
 import { FaAngleRight } from 'react-icons/fa6'
-import RATQuestions from '../components/RATQuestions'
-import ratData from '../data/ratData'
+import RATQuestions from '../components/ratComponents/RATQuestions'
+import ratData from '../data/ratTestData'
 import TestResult from '../components/TestResult'
+import Button from '../components/Button'
 
 function RATTestPage() {
   const [testFinished, setTestFinished] = useState(false)
@@ -35,15 +36,6 @@ function RATTestPage() {
 
       const answered = usedAmount === 10
 
-      console.log('Updated Set', {
-        ...prevData,
-        [setId]: {
-          ...updatedSet,
-          usedAmount,
-          answered,
-        },
-      })
-
       return {
         ...prevData,
         [setId]: {
@@ -64,13 +56,14 @@ function RATTestPage() {
   const handleRenderPreviousSet = () => {
     setCurrentSetId((prevId) => prevId - 1)
   }
-
+  /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
   const testSetAnswers = (promptKey1, promptKey2, promptKey3) => {
     handleRatValueChange(currentSetId, promptKey1, 1, true)
     handleRatValueChange(currentSetId, promptKey2, 3, true)
     handleRatValueChange(currentSetId, promptKey3, 6, true)
     handleRenderNextSet()
   }
+  /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
 
   const handleShowResults = () => {
     setTestFinished(true)
@@ -137,12 +130,7 @@ function RATTestPage() {
             />
           </div>
           <div className="flex flex-row justify-between items-center mb-2 mx-2">
-            <button
-              className="btn btn-primary text-white"
-              onClick={handleGoBackClick}
-            >
-              Backa
-            </button>
+            <Button prompt={'Backa'} onClick={handleGoBackClick} />
             <div className="flex flex-row">
               {currentSetId <= 1 ? (
                 <button className="text-gray-300" disabled>
@@ -176,12 +164,7 @@ function RATTestPage() {
               Test: SetAnswers for set {currentSetId}
             </button>
             {data[currentSetId].answered && currentSetId === 20 ? (
-              <button
-                className="btn btn-primary text-white"
-                onClick={handleShowResults}
-              >
-                Resultat
-              </button>
+              <Button prompt={'Resultat'} onClick={handleShowResults} />
             ) : (
               <button className="btn btn-secondary text-white" disabled>
                 Resultat
