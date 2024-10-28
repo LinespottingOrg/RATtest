@@ -1,4 +1,4 @@
-import { awarenessTypes } from '../data/awerenessTypesData'
+import { awarenessTypes } from '../data/awarenessTypesData'
 export function setTestResultValues(data) {
   const values = { helper: 0, influence: 0, autonomy: 0 }
   for (const key in data) {

@@ -2,9 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import RATLogo2 from '../../assets/RAT_LOGO_2.png'
 import Button from '../Button'
+import { useTranslation } from 'react-i18next'
 
 function RATMainPageHero() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const handleStartTestClick = () => {
     navigate('/rat/test')
   }
@@ -16,26 +18,19 @@ function RATMainPageHero() {
       <hr className="border-t-2 border-customBlue mb-2" />
       <div className="flex-grow ">
         <p className="leading-relaxed mt-4 md:font-semibold md:text-xl">
-          Relational Awareness Theory (RAT) is a framework designed to help
-          individuals and organizations better understand the dynamics of their
-          relationships. This theory emphasizes that our interactions are shaped
-          by more than just personal motivations—our actions are deeply
-          influenced by the relationships we maintain with others, whether in
-          personal, social, or professional contexts.
+          {t('homepage.rat.description_text_1')}
         </p>
         <p className="leading-relaxed mt-4 md:font-semibold md:text-xl">
-          The goal of Relational Awareness Theory is to help individuals
-          recognize the complexity of relationships, leading to more meaningful
-          interactions, improved communication, and deeper connections. It also
-          provides a valuable lens for understanding conflict, collaboration,
-          and leadership in various social structures, such as in the workplace
-          or within families.
+          {t('homepage.rat.description_text_2')}
         </p>
       </div>
 
       <div className="h-mainLogoSize w-mainLogoSize mx-auto mb-2">
         <div className="mb-4 mt-2">
-          <Button prompt={'Start Test'} onClick={handleStartTestClick} />
+          <Button
+            prompt={t('homepage.start_button')}
+            onClick={handleStartTestClick}
+          />
         </div>
         <img
           src={RATLogo2}

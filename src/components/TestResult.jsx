@@ -2,26 +2,27 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import RatResultChart from './ratComponents/RatResultChart'
 import Button from './Button'
-import {
-  setTestResultValues,
-  returnAwarenessPattern,
-} from '../utils/ratTestUtils'
+import { setTestResultValues, returnAwarenessPattern } from '../utils/ratTestUtils'
+import { useTranslation } from 'react-i18next'
 
 function TestResult({ data }) {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const splitData = (data, from, until) => {
     const entries = Object.entries(data)
     return Object.fromEntries(entries.slice(from, until))
   }
-  const nonConflictResults = returnAwarenessPattern(
-    setTestResultValues(splitData(data, 0, 10))
-  )
-  const conflictResults = returnAwarenessPattern(
-    setTestResultValues(splitData(data, 10, 20))
-  )
+  const nonConflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 0, 10)))
+  const conflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 10, 20)))
 
   const handleStopTestClick = () => {
     navigate('/')
+  }
+
+  const awarenessTypeKeyMap = {
+    'Analytical & Independent': 'analytical_independent',
+    'Selfless & Nurturing': 'selfless_nurturing',
+    'Assertive & Direct': 'assertive_direct',
   }
 
   return (
@@ -32,30 +33,36 @@ function TestResult({ data }) {
       </div>
       <div className="flex flex-col md:flex-row flex-grow">
         <div className="m-2 flex-grow">
-          <p className="text-xl font-semibold my-2">Non-conflict</p>
+          <p className="text-xl font-semibold my-2">{t('resultpage.non_conflict')}</p>
           <hr className="border border-primary mx-8" />
           <p className="font-semibold my-2">
-            {nonConflictResults.awarenessType}
+            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.type`)}
           </p>
-          <p className="font-semibold">{nonConflictResults.animalType}</p>
+          <p className="font-semibold">
+            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.animal`)}
+          </p>
           <hr className="border border-primary mx-4 my-2" />
-          <p>{nonConflictResults.summary}</p>
+          <p>{t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.summary`)}</p>
         </div>
         <div className="hidden md:block w-px h-vh my-5 bg-primary mx-4 blur-sm" />
         <div className="m-2 flex-grow">
-          <p className="text-xl font-semibold my-2">Conflict</p>
+          <p className="text-xl font-semibold my-2">{t('resultpage.conflict')}</p>
           <hr className="border border-primary mx-8" />
-          <p className="font-semibold my-2">{conflictResults.awarenessType}</p>
-          <p className="font-semibold">{conflictResults.animalType}</p>
+          <p className="font-semibold my-2">
+            {t(`awareness_types.${awarenessTypeKeyMap[conflictResults.awarenessType]}.type`)}
+          </p>
+          <p className="font-semibold">
+            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.animal`)}
+          </p>
           <hr className="border border-primary mx-4 my-2" />
-          <p>{conflictResults.summary}</p>
+          <p>{t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.summary`)}</p>
         </div>
       </div>
       <div className="flex justify-between items-center mx-2">
-        <Button prompt={'Avsluta Test'} onClick={handleStopTestClick} />
+        <Button prompt={t('resultpage.end_button')} onClick={handleStopTestClick} />
         <div className="flex flex-row justify-end items-center mx-2">
-          <p className="mr-4">Psst...vill du ha resultatet på mail?</p>
-          <Button prompt={'Få mail'} />
+          <p className="mr-4">{t('resultpage.mail_prompt')}</p>
+          <Button prompt={t('resultpage.mail_button')} />
         </div>
       </div>
       <div className="flex flex-row justify-between m-2 "></div>
