@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts'
+import { useTranslation } from 'react-i18next'
 
 import { setTestResultValues } from '../../utils/ratTestUtils'
 
@@ -20,6 +13,7 @@ function RatResultChart({ results }) {
   const nonConflictScores = setTestResultValues(splitData(results, 0, 10))
   const conflictScores = setTestResultValues(splitData(results, 10, 20))
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScreenResize = () => setIsSmallScreen(window.innerWidth < 650)
@@ -29,19 +23,19 @@ function RatResultChart({ results }) {
 
   const data = [
     {
-      name: 'OSJÄLVISK - VÅRDANDE',
+      name: t('awareness_types.selfless_nurturing.type'),
       uv: nonConflictScores.helper,
       pv: conflictScores.helper + 5,
       fullMark: 100,
     },
     {
-      name: 'PÅSTRIDIG - DIREKT',
+      name: t('awareness_types.assertive_direct.type'),
       uv: nonConflictScores.influence,
       pv: conflictScores.influence - 20,
       fullMark: 100,
     },
     {
-      name: 'ANALYTISK - SJÄLVSTÄNDIG',
+      name: t('awareness_types.analytical_independent.type'),
       uv: nonConflictScores.autonomy,
       pv: conflictScores.autonomy + 15,
       fullMark: 100,
@@ -60,20 +54,8 @@ function RatResultChart({ results }) {
           }}
         />
         <PolarRadiusAxis domain={[0, 100]} angle={30} />
-        <Radar
-          name="Non Conflict"
-          dataKey="uv"
-          stroke="#27b857"
-          fill="#27b857"
-          fillOpacity={0.4}
-        />
-        <Radar
-          name="Conflict"
-          dataKey="pv"
-          stroke="#8a1e1a"
-          fill="#8a1e1a"
-          fillOpacity={0.4}
-        />
+        <Radar name={t('resultpage.non_conflict')} dataKey="uv" stroke="#27b857" fill="#27b857" fillOpacity={0.4} />
+        <Radar name={t('resultpage.conflict')} dataKey="pv" stroke="#8a1e1a" fill="#8a1e1a" fillOpacity={0.4} />
         <Tooltip />
       </RadarChart>
     </ResponsiveContainer>

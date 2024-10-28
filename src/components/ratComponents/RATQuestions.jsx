@@ -1,12 +1,14 @@
 import React from 'react'
 import DraggableNumberContainer from '../DraggableNumberContainer'
 import DroppableInputContainer from '../DroppableInputContainer'
+import { useTranslation } from 'react-i18next'
 
 function RATQuestions({ data, currentSetId, handleRatValueChange }) {
+  const { t } = useTranslation()
   return (
     <div>
       <h1 className="md:text-xl font-semibold text-center my-4">
-        {data[currentSetId].statement}
+        {t(`data.rat.${currentSetId}.statement`)}
       </h1>
       <div className="space-y-4">
         <DraggableNumberContainer
