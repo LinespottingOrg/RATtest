@@ -7,6 +7,7 @@ import translationSV from './locales/sv.json'
 import HomePage from './pages/HomePage'
 import RATTestPage from './pages/RATTestPage'
 import DragLayer from './components/DragLayer'
+import LASTestPage from './pages/LASTestPage'
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rat/test" element={<RATTestPage />} />
+            <Route path="/las/test" element={<LASTestPage />} />
           </Routes>
         </Router>
       </DndProvider>

@@ -1,14 +1,13 @@
 import { React, useState } from 'react'
 import { useDrop } from 'react-dnd'
 
-function DroppableInput({ handleRatValueChange, option, currentSetId, data }) {
+function DroppableInput({ handleDataChange, option, currentSetId, data, test }) {
   const inputValue = data[currentSetId].options[option].value
-
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: 'NUMBER',
       drop: (item) => {
-        handleRatValueChange(currentSetId, option, item.number, true)
+        handleDataChange(currentSetId, option, item.number, true)
       },
       collect: (monitor) => ({
         isOver: monitor.isOver(),
@@ -18,7 +17,7 @@ function DroppableInput({ handleRatValueChange, option, currentSetId, data }) {
   )
 
   const handleClearInput = () => {
-    handleRatValueChange(currentSetId, option, 0, false)
+    handleDataChange(currentSetId, option, 0, false)
   }
 
   return (

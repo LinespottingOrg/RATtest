@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import DraggableNumber from './DraggableNumber'
+import { returnValidRatNumbers } from '../utils/ratTestUtils'
+import { returnValidLasNumbers } from '../utils/lasTestUtils'
 
-function DraggableNumberContainer({ amount, data, currentSetId }) {
+function DraggableNumberContainer({ amount, data, currentSetId, test }) {
   const [validNumbers, setValidNumbers] = useState([])
-
+  if (test === 'LAS') {
+    setValidNumbers[(1, 2, 3, 4)]
+  }
   useEffect(() => {
-    const possibleNumbers = Array.from({ length: amount }, (_, index) => index)
-    const validNumbers = possibleNumbers.filter((num) => {
-      const remaining = 10 - data[currentSetId].usedAmount
-
-      const filledInputs = Object.values(data[currentSetId].options).filter(
-        (key) => key.inputSet === true
-      ).length
-
-      if (filledInputs === 0) {
-        return num >= 0 && num <= 10
-      } else if (filledInputs === 1) {
-        return num >= 0 && num <= remaining
-      } else if (filledInputs === 2) {
-        return num === remaining
-      }
-    })
-    setValidNumbers(validNumbers)
-  }, [amount, data[currentSetId].usedAmount, data[currentSetId].inputSet])
+    if (test == 'RAT') {
+      setValidNumbers(returnValidRatNumbers(amount, data, currentSetId))
+      console.log(returnValidRatNumbers(amount, data, currentSetId))
+    } else {
+      setValidNumbers(returnValidLasNumbers(amount, data, currentSetId))
+    }
+  }, [amount, data[currentSetId], data[currentSetId]])
 
   const renderDraggableNumbers = (start, end) => {
     return Array.from({ length: end - start }, (_, index) => (
@@ -30,8 +23,8 @@ function DraggableNumberContainer({ amount, data, currentSetId }) {
         <DraggableNumber
           key={index + start}
           id={index + start}
-          number={index + start}
-          valid={validNumbers.includes(index + start)}
+          number={test === 'LAS' ? index + start + 1 : index + start}
+          valid={test === 'LAS' ? validNumbers.includes(index + start + 1) : validNumbers.includes(index + start)}
         />
       </li>
     ))
@@ -43,9 +36,7 @@ function DraggableNumberContainer({ amount, data, currentSetId }) {
         {renderDraggableNumbers(0, Math.min(amount, 5))}
       </ul>
       {amount > 5 && (
-        <ul className="flex flex-row md:w-1/2 justify-between mx-4 md:mx-auto">
-          {renderDraggableNumbers(5, amount)}
-        </ul>
+        <ul className="flex flex-row md:w-1/2 justify-between mx-4 md:mx-auto">{renderDraggableNumbers(5, amount)}</ul>
       )}
     </>
   )
