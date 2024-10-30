@@ -27,3 +27,25 @@ export function returnAwarenessPattern(data) {
       return null
   }
 }
+
+export function returnValidRatNumbers(amount, data, currentSetId) {
+  console.log('Data log in js:', data)
+  console.log('Amount log in js:', amount)
+  console.log('Currentsetid log in js:', currentSetId)
+
+  const possibleNumbers = Array.from({ length: amount }, (_, index) => index)
+  const validNumbers = possibleNumbers.filter((num) => {
+    const remaining = 10 - data[currentSetId].usedAmount
+
+    const filledInputs = Object.values(data[currentSetId].options).filter((key) => key.inputSet === true).length
+
+    if (filledInputs === 0) {
+      return num >= 0 && num <= 10
+    } else if (filledInputs === 1) {
+      return num >= 0 && num <= remaining
+    } else if (filledInputs === 2) {
+      return num === remaining
+    }
+  })
+  return validNumbers
+}

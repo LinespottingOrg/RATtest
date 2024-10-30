@@ -2,49 +2,28 @@ import React from 'react'
 import DroppableInput from './DroppableInput'
 import { useTranslation } from 'react-i18next'
 
-function DroppableInputContainer({ data, handleRatValueChange, currentSetId }) {
+function DroppableInputContainer({ data, handleDataChange, currentSetId, options, test }) {
   const { t } = useTranslation()
   return (
     <div className="flex flex-col md:flex-row justify-between mx-2 font-semibold md:w-full">
-      <div className="flex flex-row ">
-        <li>
-          <DroppableInput
-            handleRatValueChange={handleRatValueChange}
-            currentSetId={currentSetId}
-            data={data}
-            option={'helper'}
-          />
-        </li>
-        <li className="ml-2 md:max-w-36">
-          {t(`data.rat.${currentSetId}.options.helper`)}
-        </li>
-      </div>
-      <div className="flex flex-row">
-        <li>
-          <DroppableInput
-            handleRatValueChange={handleRatValueChange}
-            currentSetId={currentSetId}
-            data={data}
-            option={'influence'}
-          />
-        </li>
-        <li className="ml-2 md:max-w-36">
-          {t(`data.rat.${currentSetId}.options.influence`)}
-        </li>
-      </div>
-      <div className="flex flex-row">
-        <li>
-          <DroppableInput
-            handleRatValueChange={handleRatValueChange}
-            currentSetId={currentSetId}
-            data={data}
-            option={'autonomy'}
-          />
-        </li>
-        <li className="ml-2 md:max-w-36">
-          {t(`data.rat.${currentSetId}.options.autonomy`)}
-        </li>
-      </div>
+      {options.map((option, index) => (
+        <div key={index} className="flex flex-row ">
+          <li className="flex flex-row">
+            <DroppableInput
+              handleDataChange={handleDataChange}
+              currentSetId={currentSetId}
+              data={data}
+              option={option}
+              test={test}
+            />
+            {test === 'LAS' ? (
+              <p className="ml-2 md:max-w-36">{t(`data.las.${option}.p${currentSetId}`)}</p>
+            ) : (
+              <p className="ml-2 md:max-w-36">{t(`data.rat.${currentSetId}.options.${option}`)}</p>
+            )}
+          </li>
+        </div>
+      ))}
     </div>
   )
 }

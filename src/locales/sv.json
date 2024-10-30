@@ -15,7 +15,23 @@
     "mail_button": "Få mail",
     "mail_prompt": "Psst...vill du ha resultatet på mail?",
     "conflict": "Vid konflikt",
-    "non_conflict": "När allt är bra"
+    "non_conflict": "När allt är bra",
+    "learning_best": "Bäst för dig",
+    "learning_worst": "Sämst för dig"
+  },
+  "testpage": {
+    "rat": {},
+    "las": {
+      "heading": "Nedan kommer du få se 9 olika rader med fyra ord i varje rad. Jämför orden i varje uppsättning och rangordna dem enligt följande:",
+      "instruction_1": "Ge 4 poäng till det ord som bäst beskriver din inlärningsstil.",
+      "instruction_2": "Ge 3 poäng till det ord som näst bäst beskriver din inlärningsstil.",
+      "instruction_3": "Ge 2 poäng till det ord som näst minst karakteriserar hur du lär dig.",
+      "instruction_4": "Ge 1 poäng till det ord som minst beskriver din inlärningsstil.",
+      "description_1": "Kontrollera att du sätter olika rangordning på vart och ett av de fyra olika orden i varje uppsättning.",
+      "description_2": "Gör inga garderingar.  Fundera inte för länge på varje rad, arbeta spontant.",
+      "description_3": "Du kan tycka att det är svårt, men rangordna ändå."
+    },
+    "drag_and_drop": "Drag och släpp dina svar."
   },
   "data": {
     "rat": {
@@ -180,7 +196,52 @@
         }
       }
     },
-    "las": {}
+    "las": {
+      "concrete_experiences": {
+        "p1": "prioritera",
+        "p2": "mottaga",
+        "p3": "känna",
+        "p4": "acceptera",
+        "p5": "intuition",
+        "p6": "konkretisera",
+        "p7": "nuorientera",
+        "p8": "upplevelse",
+        "p9": "känslor"
+      },
+      "reflective_observation": {
+        "p1": "pröva",
+        "p2": "uppmärksamma",
+        "p3": "betrakta",
+        "p4": "relatera",
+        "p5": "svara",
+        "p6": "observera",
+        "p7": "reflektera",
+        "p8": "observation",
+        "p9": "avvakta"
+      },
+      "abstract_thinking": {
+        "p1": "sammanfatta",
+        "p2": "analysera",
+        "p3": "tänka",
+        "p4": "värdera",
+        "p5": "logik",
+        "p6": "teoretisera",
+        "p7": "framtidsorientera",
+        "p8": "begrepp",
+        "p9": "rationell"
+      },
+      "active_experimentation": {
+        "p1": "praktisera",
+        "p2": "opartisk",
+        "p3": "göra",
+        "p4": "riskera",
+        "p5": "fråga",
+        "p6": "aktivera",
+        "p7": "tillämpa",
+        "p8": "experiment",
+        "p9": "engagerad"
+      }
+    }
   },
   "awareness_types": {
     "selfless_nurturing": {
@@ -197,6 +258,28 @@
       "type": "Analytisk & Självständig",
       "animal": "Uggla",
       "summary": "Den analytiska och självständiga personen strävar efter att vara självförsörjande, självständig, eftertänksam och logisk."
+    }
+  },
+  "learning_styles": {
+    "concrete_experiences": {
+      "style": "Konkreta Upplevelser",
+      "summary_best": "Du lär dig bäst genom att vara direkt involverad i själva upplevelsen. Att känna, observera och vara närvarande i nuet är centralt för dig. Praktiska aktiviteter, där du kan använda dina sinnen och få direkt feedback, hjälper dig att ta till dig kunskap. Du drar lärdom av att interagera med omvärlden och värderar insikter från verkliga situationer.",
+      "summary_worst": "När konkreta upplevelser blir en utmaning för dig, kan du ha svårt att tillgodogöra dig information som kräver teoretiskt eller abstrakt tänkande. Utan en direkt koppling till verkliga upplevelser kan ditt engagemang minska, och du kan uppleva abstrakta teorier som ointressanta eller svårförståeliga. Att behöva observera utan att delta kan dessutom leda till att du tappar intresset och har svårt att fokusera."
+    },
+    "reflective_observation": {
+      "style": "Reflekterande Observation",
+      "summary_best": "Du föredrar att ta ett steg tillbaka för att observera och reflektera över en situation innan du drar några slutsatser. Genom att betrakta olika perspektiv och detaljer skapar du en djupare förståelse. För dig är reflektion viktigt, och du känner dig mer bekväm när du kan analysera i lugn och ro innan du agerar.",
+      "summary_worst": "När reflekterande observation inte fungerar optimalt för dig, kan du fastna i att analysera och överväga alternativ utan att faktiskt agera. Beslutsfattande kan bli utdraget, och du kan ibland undvika att ta risker eftersom du känner dig tryggare i att bara observera. För mycket eftertanke kan hindra dig från att prova nya tillvägagångssätt."
+    },
+    "abstract_thinking": {
+      "style": "Abstrakt Tänkande",
+      "summary_best": "Du är en person som lär dig bäst genom att använda logik och intellekt för att förstå koncept och teorier. Du är nyfiken på att utforska underliggande principer och system och gillar att arbeta med abstrakta idéer. För dig är det viktigt att skapa en teoretisk förståelse och struktur i dina kunskaper.",
+      "summary_worst": "När abstrakt tänkande inte fungerar optimalt för dig, kan du ha svårt att engagera dig i praktiska eller vardagliga uppgifter. Du kan lätt fastna i att teoretisera och analysera, vilket ibland gör det svårt att omsätta kunskapen i praktiska handlingar. Att fokusera för mycket på detaljer och teorier kan göra att helheten förloras."
+    },
+    "active_experimentation": {
+      "style": "Aktivt Experimenterande",
+      "summary_best": "Du lär dig bäst genom att aktivt testa idéer och teorier i praktiken. Du är handlingsorienterad och tycker om att prova nya tillvägagångssätt och lösningar. För dig är det viktigt att snabbt kunna se resultaten av dina handlingar och anpassa dig därefter, vilket gör att du kan omsätta din kunskap i praktiska handlingar.",
+      "summary_worst": "När aktivt experimenterande inte fungerar optimalt för dig, kan du ha en tendens att agera utan att noggrant överväga konsekvenserna. Du kan ibland ta förhastade beslut utan att reflektera, vilket kan leda till misstag. I din strävan att testa nya idéer kan du missa att utvärdera resultat och därmed upprepa samma fel."
     }
   }
 }

@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import RATLogo1 from '../assets/RAT_LOGO_1.png'
-import RATLogo3 from '../assets/RAT_LOGO_3.png'
+import { useTranslation } from 'react-i18next'
+import LasLogo1 from '../assets/LAS_LOGO_1.png'
+import LasLogo3 from '../assets/LAS_LOGO_3.png'
 import { FaAngleLeft } from 'react-icons/fa6'
 import { FaAngleRight } from 'react-icons/fa6'
-import RATQuestions from '../components/ratComponents/RATQuestions'
-import ratData from '../data/ratTestData'
-import TestResult from '../components/TestResult'
+import lasData from '../data/lasTestData'
+import LasTestResult from '../components/LasTestResult'
 import Button from '../components/Button'
+import LASQuestions from '../components/lasComponents/LASQuestions'
 
-function RATTestPage() {
+function LASTestPage() {
   const [testFinished, setTestFinished] = useState(false)
-  const [data, setData] = useState(ratData)
+  const [data, setData] = useState(lasData)
   const [currentSetId, setCurrentSetId] = useState(1)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
-  const handleRatValueChange = (setId, promptKey, newValue, inputSet) => {
+  const handleDataChange = (setId, promptKey, newValue, inputSet) => {
+    console.log('Data before change:', data[setId])
+
     setData((prevData) => {
       const updatedSet = {
         ...prevData[setId],
@@ -33,11 +37,12 @@ function RATTestPage() {
 
       const answered = usedAmount === 10
 
+      console.log(`UpdatedSet ${setId}:`, updatedSet)
+
       return {
         ...prevData,
         [setId]: {
           ...updatedSet,
-          usedAmount,
           answered,
         },
       }
@@ -45,7 +50,7 @@ function RATTestPage() {
   }
 
   const handleRenderNextSet = () => {
-    if (currentSetId != 20) {
+    if (currentSetId != 9) {
       setCurrentSetId((prevId) => prevId + 1)
     }
   }
@@ -54,10 +59,11 @@ function RATTestPage() {
     setCurrentSetId((prevId) => prevId - 1)
   }
   /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
-  const testSetAnswers = (promptKey1, promptKey2, promptKey3) => {
-    handleRatValueChange(currentSetId, promptKey1, 1, true)
-    handleRatValueChange(currentSetId, promptKey2, 3, true)
-    handleRatValueChange(currentSetId, promptKey3, 6, true)
+  const testSetAnswers = (prompt1, prompt2, prompt3, prompt4) => {
+    handleDataChange(currentSetId, prompt1, 1, true)
+    handleDataChange(currentSetId, prompt2, 2, true)
+    handleDataChange(currentSetId, prompt3, 3, true)
+    handleDataChange(currentSetId, prompt4, 4, true)
     handleRenderNextSet()
   }
   /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
@@ -74,42 +80,44 @@ function RATTestPage() {
     <div className="flex md:flex-row md:h-1024 md:max-w-1440 mx-auto text-customTextColor font-poppins h-full">
       <div className="w-20% text-center hidden md:flex flex-col justify-between bg-gradient-to-r from-primary">
         <div>
-          <h1 className="text-2xl md:text-2xl mt-2 font-bold">Relational Awereness Theory</h1>
+          <h1 className="text-2xl md:text-2xl mt-2 font-bold">Learning Style Assessment</h1>
         </div>
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
-          <img src={RATLogo1} alt="RAT LOGO" className="w-full h-full object-contain" />
+          <img src={LasLogo1} alt="LAS LOGO" className="w-full h-full object-contain" />
         </div>
       </div>
       {testFinished ? (
         <div className="md:w-80%">
-          <TestResult data={data} />
+          <LasTestResult data={data} />
         </div>
       ) : (
         <div className="md:w-80% flex flex-col h-full">
           <div className="flex md:flex-row flex-grow">
             <div className="hidden md:block w-20%">
               <div className="mt-auto h-testRightLogoSize w-testRightLogoSize mx-auto">
-                <img src={RATLogo3} alt="RAT LOGO" className="w-full h-full object-contain" />
+                <img src={LasLogo3} alt="LAS LOGO" className="w-full h-full object-contain" />
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">
-              <p className="text-l md:text-xl font-semibold leading-relaxed">
-                Testet består av 20 frågor och varje fråga börjar med en ofullständig mening följd av tre alternativ
-              </p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed mb-2">{t('testpage.las.heading')}</p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed mb-2">{t('testpage.las.instruction_1')}</p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed mb-2">{t('testpage.las.instruction_2')}</p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed mb-2">{t('testpage.las.instruction_3')}</p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed">{t('testpage.las.instruction_4')}</p>
             </div>
           </div>
           <div className="p-4 flex-grow">
             <p className="text-md md:text-xl font-semibold leading-relaxed">
-              Fördela 10 poäng bland de tre alternativen för att belysa din ståndpunkt i vart och ett av de tre
-              förslagen.
-              <br /> Använd alltid samtliga 10 poäng, aldrig fler eller färre än 10 poäng. Du får använda 0 i ett
-              alternativ.
+              {t('testpage.las.description_1')}
+              <br /> {t('testpage.las.description_2')}
               <br />
-              Drag och släpp dina svar.
+              {t('testpage.las.description_3')}
+              <br />
+              {t('testpage.drag_and_drop')}
             </p>
           </div>
           <div className="flex-grow">
-            <RATQuestions data={data} currentSetId={currentSetId} handleDataChange={handleRatValueChange} />
+            <LASQuestions data={data} currentSetId={currentSetId} handleDataChange={handleDataChange} />
           </div>
           <div className="flex flex-row justify-between items-center mb-2 mx-2">
             <Button prompt={'Backa'} onClick={handleGoBackClick} />
@@ -127,9 +135,9 @@ function RATTestPage() {
               <progress
                 className="progress progress-primary w-24 md:w-56 mx-6 self-center"
                 value={currentSetId}
-                max="20"
+                max="9"
               ></progress>
-              {data[currentSetId].answered && currentSetId !== 20 ? (
+              {data[currentSetId].answered && currentSetId !== 9 ? (
                 <button onClick={handleRenderNextSet}>
                   <FaAngleRight />
                 </button>
@@ -139,10 +147,20 @@ function RATTestPage() {
                 </button>
               )}
             </div>
-            <button className="btn btn-secondary" onClick={() => testSetAnswers('helper', 'influence', 'autonomy')}>
+            <button
+              className="btn btn-secondary"
+              onClick={() =>
+                testSetAnswers(
+                  'concrete_experiences',
+                  'reflective_observation',
+                  'abstract_thinking',
+                  'active_experimentation'
+                )
+              }
+            >
               Test: SetAnswers for set {currentSetId}
             </button>
-            {data[currentSetId].answered && currentSetId === 20 ? (
+            {data[currentSetId].answered && currentSetId === 9 ? (
               <Button prompt={'Resultat'} onClick={handleShowResults} />
             ) : (
               <button className="btn btn-secondary text-white" disabled>
@@ -156,4 +174,4 @@ function RATTestPage() {
   )
 }
 
-export default RATTestPage
+export default LASTestPage
