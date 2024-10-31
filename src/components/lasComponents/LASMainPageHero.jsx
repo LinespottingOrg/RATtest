@@ -4,7 +4,7 @@ import Button from '../Button'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-function LASMainPageHero() {
+function LASMainPageHero({ handleTranslation, isEnglish }) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const handleStartTestClick = () => {
@@ -16,6 +16,11 @@ function LASMainPageHero() {
       <h1 className="text-2xl md:text-4xl mb-2 font-bold">Learning Styles Assessment</h1>
       <hr className="border-t-2 border-customBlue mb-2" />
       <div className="flex-grow">
+        <label className="flex cursor-pointer gap-2 justify-center">
+          <span className="label-text">Swedish</span>
+          <input type="checkbox" checked={isEnglish} className="toggle" onChange={handleTranslation} />
+          <span className="label-text">English</span>
+        </label>
         <p className="leading-relaxed mt-4 md:font-semibold md:text-xl">{t('homepage.las.description_text_1')}</p>
         <p className="leading-relaxed mt-4 md:font-semibold md:text-xl">{t('homepage.las.description_text_2')}</p>
       </div>

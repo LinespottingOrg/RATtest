@@ -25,19 +25,19 @@ function RatResultChart({ results }) {
     {
       name: t('awareness_types.selfless_nurturing.type'),
       uv: nonConflictScores.helper,
-      pv: conflictScores.helper + 5,
+      pv: conflictScores.helper,
       fullMark: 100,
     },
     {
       name: t('awareness_types.assertive_direct.type'),
       uv: nonConflictScores.influence,
-      pv: conflictScores.influence - 20,
+      pv: conflictScores.influence,
       fullMark: 100,
     },
     {
       name: t('awareness_types.analytical_independent.type'),
       uv: nonConflictScores.autonomy,
-      pv: conflictScores.autonomy + 15,
+      pv: conflictScores.autonomy,
       fullMark: 100,
     },
   ]

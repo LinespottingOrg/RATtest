@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useTransition } from 'react'
 import { useNavigate } from 'react-router-dom'
 import RATLogo1 from '../assets/RAT_LOGO_1.png'
 import RATLogo3 from '../assets/RAT_LOGO_3.png'
@@ -8,12 +8,14 @@ import RATQuestions from '../components/ratComponents/RATQuestions'
 import ratData from '../data/ratTestData'
 import TestResult from '../components/TestResult'
 import Button from '../components/Button'
+import { useTranslation } from 'react-i18next'
 
-function RATTestPage() {
+function RATTestPage({ handleTranslation, isEnglish }) {
   const [testFinished, setTestFinished] = useState(false)
   const [data, setData] = useState(ratData)
   const [currentSetId, setCurrentSetId] = useState(1)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const handleRatValueChange = (setId, promptKey, newValue, inputSet) => {
     setData((prevData) => {
@@ -75,6 +77,11 @@ function RATTestPage() {
       <div className="w-20% text-center hidden md:flex flex-col justify-between bg-gradient-to-r from-primary">
         <div>
           <h1 className="text-2xl md:text-2xl mt-2 font-bold">Relational Awereness Theory</h1>
+          <label className="flex cursor-pointer gap-2 justify-center">
+            <span className="label-text">Swedish</span>
+            <input type="checkbox" checked={isEnglish} className="toggle" onChange={handleTranslation} />
+            <span className="label-text">English</span>
+          </label>
         </div>
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
           <img src={RATLogo1} alt="RAT LOGO" className="w-full h-full object-contain" />
@@ -93,26 +100,23 @@ function RATTestPage() {
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">
-              <p className="text-l md:text-xl font-semibold leading-relaxed">
-                Testet består av 20 frågor och varje fråga börjar med en ofullständig mening följd av tre alternativ
-              </p>
+              <p className="text-l md:text-xl font-semibold leading-relaxed">{t('testpage.rat.heading')}</p>
             </div>
           </div>
           <div className="p-4 flex-grow">
             <p className="text-md md:text-xl font-semibold leading-relaxed">
-              Fördela 10 poäng bland de tre alternativen för att belysa din ståndpunkt i vart och ett av de tre
-              förslagen.
-              <br /> Använd alltid samtliga 10 poäng, aldrig fler eller färre än 10 poäng. Du får använda 0 i ett
-              alternativ.
+              {t('testpage.rat.instruction_1')}
               <br />
-              Drag och släpp dina svar.
+              {t('testpage.rat.instruction_2')}
+              <br />
+              {t('testpage.drag_and_drop')}
             </p>
           </div>
           <div className="flex-grow">
             <RATQuestions data={data} currentSetId={currentSetId} handleDataChange={handleRatValueChange} />
           </div>
           <div className="flex flex-row justify-between items-center mb-2 mx-2">
-            <Button prompt={'Backa'} onClick={handleGoBackClick} />
+            <Button prompt={t('resultpage.return')} onClick={handleGoBackClick} />
             <div className="flex flex-row">
               {currentSetId <= 1 ? (
                 <button className="text-gray-300" disabled>
@@ -143,10 +147,10 @@ function RATTestPage() {
               Test: SetAnswers for set {currentSetId}
             </button>
             {data[currentSetId].answered && currentSetId === 20 ? (
-              <Button prompt={'Resultat'} onClick={handleShowResults} />
+              <Button prompt={t('testpage.result_button')} onClick={handleShowResults} />
             ) : (
               <button className="btn btn-secondary text-white" disabled>
-                Resultat
+                {t('testpage.result_button')}
               </button>
             )}
           </div>

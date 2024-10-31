@@ -17,10 +17,15 @@
     "conflict": "Vid konflikt",
     "non_conflict": "När allt är bra",
     "learning_best": "Bäst för dig",
-    "learning_worst": "Sämst för dig"
+    "learning_worst": "Sämst för dig",
+    "return": "Backa"
   },
   "testpage": {
-    "rat": {},
+    "rat": {
+      "heading": "Testet består av 20 frågor och varje fråga börjar med en ofullständig mening följd av tre alternativ.",
+      "instruction_1": "Fördela 10 poäng bland de tre alternativen för att belysa din ståndpunkt i vart och ett av de tre förslagen.",
+      "instruction_2": "Använd alltid samtliga 10 poäng, aldrig fler eller färre än 10 poäng. Du får använda 0 i ett alternativ."
+    },
     "las": {
       "heading": "Nedan kommer du få se 9 olika rader med fyra ord i varje rad. Jämför orden i varje uppsättning och rangordna dem enligt följande:",
       "instruction_1": "Ge 4 poäng till det ord som bäst beskriver din inlärningsstil.",
@@ -31,7 +36,8 @@
       "description_2": "Gör inga garderingar.  Fundera inte för länge på varje rad, arbeta spontant.",
       "description_3": "Du kan tycka att det är svårt, men rangordna ändå."
     },
-    "drag_and_drop": "Drag och släpp dina svar."
+    "drag_and_drop": "Drag och släpp dina svar.",
+    "result_button": "Resultat"
   },
   "data": {
     "rat": {
@@ -197,49 +203,51 @@
       }
     },
     "las": {
-      "concrete_experiences": {
-        "p1": "prioritera",
-        "p2": "mottaga",
-        "p3": "känna",
-        "p4": "acceptera",
-        "p5": "intuition",
-        "p6": "konkretisera",
-        "p7": "nuorientera",
-        "p8": "upplevelse",
-        "p9": "känslor"
-      },
-      "reflective_observation": {
-        "p1": "pröva",
-        "p2": "uppmärksamma",
-        "p3": "betrakta",
-        "p4": "relatera",
-        "p5": "svara",
-        "p6": "observera",
-        "p7": "reflektera",
-        "p8": "observation",
-        "p9": "avvakta"
-      },
-      "abstract_thinking": {
-        "p1": "sammanfatta",
-        "p2": "analysera",
-        "p3": "tänka",
-        "p4": "värdera",
-        "p5": "logik",
-        "p6": "teoretisera",
-        "p7": "framtidsorientera",
-        "p8": "begrepp",
-        "p9": "rationell"
-      },
-      "active_experimentation": {
-        "p1": "praktisera",
-        "p2": "opartisk",
-        "p3": "göra",
-        "p4": "riskera",
-        "p5": "fråga",
-        "p6": "aktivera",
-        "p7": "tillämpa",
-        "p8": "experiment",
-        "p9": "engagerad"
+      "options": {
+        "concrete_experiences": {
+          "p1": "prioritera",
+          "p2": "mottaga",
+          "p3": "känna",
+          "p4": "acceptera",
+          "p5": "intuition",
+          "p6": "konkretisera",
+          "p7": "nuorientera",
+          "p8": "upplevelse",
+          "p9": "känslor"
+        },
+        "reflective_observation": {
+          "p1": "pröva",
+          "p2": "uppmärksamma",
+          "p3": "betrakta",
+          "p4": "relatera",
+          "p5": "svara",
+          "p6": "observera",
+          "p7": "reflektera",
+          "p8": "observation",
+          "p9": "avvakta"
+        },
+        "abstract_thinking": {
+          "p1": "sammanfatta",
+          "p2": "analysera",
+          "p3": "tänka",
+          "p4": "värdera",
+          "p5": "logik",
+          "p6": "teoretisera",
+          "p7": "framtidsorientera",
+          "p8": "begrepp",
+          "p9": "rationell"
+        },
+        "active_experimentation": {
+          "p1": "praktisera",
+          "p2": "opartisk",
+          "p3": "göra",
+          "p4": "riskera",
+          "p5": "fråga",
+          "p6": "aktivera",
+          "p7": "tillämpa",
+          "p8": "experiment",
+          "p9": "engagerad"
+        }
       }
     }
   },

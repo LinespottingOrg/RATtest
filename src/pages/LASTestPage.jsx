@@ -10,7 +10,7 @@ import LasTestResult from '../components/LasTestResult'
 import Button from '../components/Button'
 import LASQuestions from '../components/lasComponents/LASQuestions'
 
-function LASTestPage() {
+function LASTestPage({ handleTranslation, isEnglish }) {
   const [testFinished, setTestFinished] = useState(false)
   const [data, setData] = useState(lasData)
   const [currentSetId, setCurrentSetId] = useState(1)
@@ -81,6 +81,11 @@ function LASTestPage() {
       <div className="w-20% text-center hidden md:flex flex-col justify-between bg-gradient-to-r from-primary">
         <div>
           <h1 className="text-2xl md:text-2xl mt-2 font-bold">Learning Style Assessment</h1>
+          <label className="flex cursor-pointer gap-2 justify-center">
+            <span className="label-text">Swedish</span>
+            <input type="checkbox" checked={isEnglish} className="toggle" onChange={handleTranslation} />
+            <span className="label-text">English</span>
+          </label>
         </div>
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
           <img src={LasLogo1} alt="LAS LOGO" className="w-full h-full object-contain" />
@@ -120,7 +125,7 @@ function LASTestPage() {
             <LASQuestions data={data} currentSetId={currentSetId} handleDataChange={handleDataChange} />
           </div>
           <div className="flex flex-row justify-between items-center mb-2 mx-2">
-            <Button prompt={'Backa'} onClick={handleGoBackClick} />
+            <Button prompt={t('resultpage.return')} onClick={handleGoBackClick} />
             <div className="flex flex-row">
               {currentSetId <= 1 ? (
                 <button className="text-gray-300" disabled>
@@ -161,10 +166,10 @@ function LASTestPage() {
               Test: SetAnswers for set {currentSetId}
             </button>
             {data[currentSetId].answered && currentSetId === 9 ? (
-              <Button prompt={'Resultat'} onClick={handleShowResults} />
+              <Button prompt={t('testpage.result_button')} onClick={handleShowResults} />
             ) : (
               <button className="btn btn-secondary text-white" disabled>
-                Resultat
+                {t('testpage.result_button')}
               </button>
             )}
           </div>

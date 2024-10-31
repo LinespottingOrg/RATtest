@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Radar,
-  PieChart,
-  Pie,
-  Cell,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import { useTranslation } from 'react-i18next'
 import { returnResultValues } from '../../utils/lasTestUtils'
 
@@ -43,8 +33,8 @@ function LasResultChart({ result }) {
           cy="50%"
           startAngle={180}
           endAngle={-180}
-          innerRadius={isSmallScreen ? 30 : 80}
-          outerRadius={isSmallScreen ? 40 : 100}
+          innerRadius={isSmallScreen ? 15 : 80}
+          outerRadius={isSmallScreen ? 25 : 100}
           paddingAngle={5}
           dataKey="value"
           label={(entry) => `${entry.name}: ${entry.value}`}

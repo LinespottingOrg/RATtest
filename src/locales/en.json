@@ -1,0 +1,293 @@
+{
+  "homepage": {
+    "rat": {
+      "description_text_1": "Relational Awareness Theory (RAT) is a framework designed to help individuals and organizations better understand the dynamics of their relationships. This theory emphasizes that our interactions are shaped by more than just personal motivations – our actions are deeply influenced by the relationships we have with others, whether in personal, social, or professional contexts.",
+      "description_text_2": "The goal of Relational Awareness Theory is to help individuals recognize the complexity of relationships, leading to more meaningful interactions, improved communication, and deeper connections. It also provides a valuable perspective for understanding conflict, collaboration, and leadership in various social structures, such as in the workplace or within families."
+    },
+    "las": {
+      "description_text_1": "Discover your unique learning preferences with our learning style assessment! This insightful assessment helps you understand how you best absorb, process, and retain information. By identifying your dominant learning styles, you can tailor your educational experiences to enhance your learning efficiency and effectiveness.",
+      "description_text_2": "The learning style assessment consists of a series of simple questions designed to reveal your preferred learning methods. Upon completion, you'll receive a detailed profile highlighting your learning style, allowing you to adopt strategies that play to your strengths."
+    },
+    "start_button": "Start Test"
+  },
+  "resultpage": {
+    "end_button": "End Test",
+    "mail_button": "Result by Email",
+    "mail_prompt": "Psst... would you like the results emailed?",
+    "conflict": "In Conflict",
+    "non_conflict": "When All is Well",
+    "learning_best": "Best for You",
+    "learning_worst": "Worst for You",
+    "return": "Return"
+  },
+  "testpage": {
+    "rat": {
+      "heading": "The test consists of 20 questions, and each question begins with an incomplete sentence followed by three options.",
+      "instruction_1": "Distribute 10 points among the three options to reflect your position on each of the three suggestions.",
+      "instruction_2": "Always use exactly 10 points, never more or fewer than 10 points. You can use 0 for an option."
+    },
+    "las": {
+      "heading": "Below you will see 9 different rows with four words in each row. Compare the words in each set and rank them as follows:",
+      "instruction_1": "Give 4 points to the word that best describes your learning style.",
+      "instruction_2": "Give 3 points to the word that next best describes your learning style.",
+      "instruction_3": "Give 2 points to the word that describes how you learn the least.",
+      "instruction_4": "Give 1 point to the word that least describes your learning style.",
+      "description_1": "Ensure that you rank each of the four words differently in each set.",
+      "description_2": "Do not hedge your choices. Don’t overthink each row; work spontaneously.",
+      "description_3": "You may find it difficult, but still rank them."
+    },
+    "drag_and_drop": "Drag and drop your answers.",
+    "result_button": "Result"
+  },
+  "data": {
+    "rat": {
+      "1": {
+        "statement": "I feel best when I...",
+        "options": {
+          "helper": "help others to do what they want to do",
+          "influence": "get others to do what I want to do",
+          "autonomy": "do what I want to do without having to think about others"
+        }
+      },
+      "2": {
+        "statement": "Most of the time, I am inclined to be...",
+        "options": {
+          "helper": "a sensitive person quick to respond to others' needs",
+          "influence": "an energetic person quick to seize opportunities",
+          "autonomy": "a practical person careful not to rush ahead until I am finished with what I am doing"
+        }
+      },
+      "3": {
+        "statement": "When I first meet other people, I am most likely to be...",
+        "options": {
+          "helper": "eager to know if they like me",
+          "influence": "extremely curious to figure out if they are something for me",
+          "autonomy": "politely cautious until I figure out what they expect of me"
+        }
+      },
+      "4": {
+        "statement": "I mostly consider myself...",
+        "options": {
+          "helper": "a nice person that others can usually count on to lend a helping hand",
+          "influence": "a strong person who is a role model for others",
+          "autonomy": "a thoughtful person who studies things thoroughly before acting"
+        }
+      },
+      "5": {
+        "statement": "I feel most satisfied when...",
+        "options": {
+          "helper": "bigger decisions are made by others and how I can contribute is clear",
+          "influence": "others count on me to make major decisions and tell them what to do",
+          "autonomy": "I’ve had time to understand a major decision and determine the course of action myself"
+        }
+      },
+      "6": {
+        "statement": "People who really know me see me as someone they can count on...",
+        "options": {
+          "helper": "to be reliable and always loyal to them",
+          "influence": "to be full of ambition and initiative",
+          "autonomy": "to be unwavering in my beliefs and principles"
+        }
+      },
+      "7": {
+        "statement": "It is most like me to...",
+        "options": {
+          "helper": "do my very best and trust that others appreciate my contribution",
+          "influence": "make my voice heard at opportune moments and influence decisions",
+          "autonomy": "be calm, practical, and sure of what I’m doing"
+        }
+      },
+      "8": {
+        "statement": "I would like to describe myself as someone who is mostly...",
+        "options": {
+          "helper": "friendly, open, and sees something good in every person",
+          "influence": "energetic, confident, and seizes opportunities others miss",
+          "autonomy": "careful, honest, and true to their word"
+        }
+      },
+      "9": {
+        "statement": "I feel most satisfied when I can be...",
+        "options": {
+          "helper": "a support to a strong leader whom I trust",
+          "influence": "the one leading whom others wish to follow",
+          "autonomy": "neither a leader nor a follower, but someone who goes their own independent way"
+        }
+      },
+      "10": {
+        "statement": "When I am being true to myself, I prefer to...",
+        "options": {
+          "helper": "see others benefit from what I’ve managed to teach them",
+          "influence": "see others turn to me to guide and set the tone",
+          "autonomy": "be my own boss and do things for myself and by myself"
+        }
+      },
+      "11": {
+        "statement": "When opposed, I am most likely to...",
+        "options": {
+          "helper": "set aside my own interests to be helpful",
+          "influence": "stand firm and fight for my own rights",
+          "autonomy": "be doubly cautious and try to restrain myself"
+        }
+      },
+      "12": {
+        "statement": "If I decide I want to overcome someone’s resistance, I try to...",
+        "options": {
+          "helper": "change what I’m doing to make it clearer for them",
+          "influence": "find gaps in their argument and press my strong points",
+          "autonomy": "appeal to their common sense for fair and honest play"
+        }
+      },
+      "13": {
+        "statement": "When dealing with difficult people, I mostly...",
+        "options": {
+          "helper": "find it easiest to agree with them for the time being",
+          "influence": "challenge them to prove my point",
+          "autonomy": "respect their views and expect the same in return"
+        }
+      },
+      "14": {
+        "statement": "When someone really disagrees with me, I usually...",
+        "options": {
+          "helper": "give in and do as they want if it’s not something very important to me",
+          "influence": "challenge them immediately and present strong arguments",
+          "autonomy": "wait until I am sure of my position"
+        }
+      },
+      "15": {
+        "statement": "When someone openly opposes me, I usually...",
+        "options": {
+          "helper": "give in for the sake of peace and trust they’re being honest",
+          "influence": "accept it as a battle and determine to win",
+          "autonomy": "try to withdraw from the partnership and return to my own interests"
+        }
+      },
+      "16": {
+        "statement": "If I don’t get what I expect from a friendship, I am most inclined to...",
+        "options": {
+          "helper": "wait for things to work out within a reasonable time",
+          "influence": "push more convincingly to get what I want",
+          "autonomy": "leave the friendship and look elsewhere for what I seek"
+        }
+      },
+      "17": {
+        "statement": "When disappointed by another person, I am most likely to...",
+        "options": {
+          "helper": "put my own interests second and expect my efforts to be worthwhile",
+          "influence": "fight and make them aware of what I don’t like",
+          "autonomy": "not react too quickly and give them a chance to make it right"
+        }
+      },
+      "18": {
+        "statement": "When someone insists on having their way, I usually...",
+        "options": {
+          "helper": "set aside my own wishes for the moment and accommodate them",
+          "influence": "counter-argue and try to change their mind",
+          "autonomy": "think carefully about what I’m willing to compromise"
+        }
+      },
+      "19": {
+        "statement": "When someone openly criticizes me, I am most likely to...",
+        "options": {
+          "helper": "try to calm them down and soothe their anger towards me",
+          "influence": "take offense and strongly question their right to criticize me",
+          "autonomy": "become twice as cautious and carefully examine each accusation"
+        }
+      },
+      "20": {
+        "statement": "If someone has clearly abused my trust, I tend to show that I...",
+        "options": {
+          "helper": "think they have done more harm to themselves than to me",
+          "influence": "get angry at them and then try to resolve the issues",
+          "autonomy": "try to figure out what went wrong and avoid it happening again in the future"
+        }
+      }
+    },
+    "las": {
+      "options": {
+        "concrete_experiences": {
+          "p1": "prioritize",
+          "p2": "receive",
+          "p3": "feel",
+          "p4": "accept",
+          "p5": "intuition",
+          "p6": "concretize",
+          "p7": "be present",
+          "p8": "experience",
+          "p9": "feelings"
+        },
+        "reflective_observation": {
+          "p1": "try",
+          "p2": "pay attention",
+          "p3": "observe",
+          "p4": "relate",
+          "p5": "respond",
+          "p6": "watch",
+          "p7": "reflect",
+          "p8": "observation",
+          "p9": "wait"
+        },
+        "abstract_thinking": {
+          "p1": "summarize",
+          "p2": "analyze",
+          "p3": "think",
+          "p4": "evaluate",
+          "p5": "logic",
+          "p6": "theorize",
+          "p7": "future-oriented",
+          "p8": "concept",
+          "p9": "rational"
+        },
+        "active_experimentation": {
+          "p1": "practice",
+          "p2": "impartial",
+          "p3": "do",
+          "p4": "risk",
+          "p5": "question",
+          "p6": "activate",
+          "p7": "apply",
+          "p8": "experiment",
+          "p9": "engaged"
+        }
+      }
+    }
+  },
+  "awareness_types": {
+    "selfless_nurturing": {
+      "type": "Selfless & Caring",
+      "animal": "St. Bernard Dog",
+      "summary": "The selfless and caring character is marked by their pursuit of harmony with others and a desire to ensure everyone feels good without expecting much in return."
+    },
+    "assertive_direct": {
+      "type": "Assertive & Direct",
+      "animal": "Lion",
+      "summary": "The assertive and direct person strives to be straightforward, wants to guide others' activities, and seeks recognition from others."
+    },
+    "analytical_independent": {
+      "type": "Analytical & Independent",
+      "animal": "Owl",
+      "summary": "The analytical and independent person aims to be self-sufficient, independent, thoughtful, and logical."
+    }
+  },
+  "learning_styles": {
+    "concrete_experiences": {
+      "style": "Concrete Experiences",
+      "summary_best": "You learn best through direct involvement in experiences themselves. Feeling, observing, and being present in the moment are central to you. Hands-on activities, where you can use your senses and receive immediate feedback, help you acquire knowledge. You gain insights by interacting with the world and value lessons from real situations.",
+      "summary_worst": "When concrete experiences are challenging for you, you may struggle to absorb information that requires theoretical or abstract thinking. Without a direct connection to real experiences, your engagement might decrease, and you may find abstract theories uninteresting or difficult to understand. Observing without participating can also lead to losing interest and finding it hard to focus."
+    },
+    "reflective_observation": {
+      "style": "Reflective Observation",
+      "summary_best": "You prefer to take a step back to observe and reflect on a situation before drawing conclusions. By considering different perspectives and details, you create a deeper understanding. Reflection is important to you, and you feel more comfortable when you can analyze at your own pace before acting.",
+      "summary_worst": "When reflective observation does not work optimally for you, you may get stuck in analyzing and considering alternatives without actually acting. Decision-making can become drawn-out, and you may sometimes avoid taking risks as you feel more comfortable just observing. Too much reflection can prevent you from trying new approaches."
+    },
+    "abstract_thinking": {
+      "style": "Abstract Thinking",
+      "summary_best": "You learn best by using logic and intellect to understand concepts and theories. You are curious about exploring underlying principles and systems and enjoy working with abstract ideas. It is important to you to create a theoretical understanding and structure in your knowledge.",
+      "summary_worst": "When abstract thinking does not work optimally for you, you may struggle to engage in practical or everyday tasks. You may easily get caught up in theorizing and analyzing, making it difficult to apply knowledge practically. Focusing too much on details and theories can cause the overall picture to be lost."
+    },
+    "active_experimentation": {
+      "style": "Active Experimentation",
+      "summary_best": "You learn best by actively testing ideas and theories in practice. You are action-oriented and enjoy trying new approaches and solutions. For you, it is important to quickly see the results of your actions and adapt accordingly, allowing you to apply your knowledge in practical actions.",
+      "summary_worst": "When active experimentation does not work optimally for you, you may tend to act without carefully considering the consequences. You might sometimes make hasty decisions without reflecting, which can lead to mistakes. In your eagerness to try new ideas, you might miss evaluating results, leading to repeating the same mistakes."
+    }
+  }
+}

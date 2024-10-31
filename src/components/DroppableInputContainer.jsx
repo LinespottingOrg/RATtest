@@ -17,7 +17,7 @@ function DroppableInputContainer({ data, handleDataChange, currentSetId, options
               test={test}
             />
             {test === 'LAS' ? (
-              <p className="ml-2 md:max-w-36">{t(`data.las.${option}.p${currentSetId}`)}</p>
+              <p className="ml-2 md:max-w-36">{t(`data.las.options.${option}.p${currentSetId}`)}</p>
             ) : (
               <p className="ml-2 md:max-w-36">{t(`data.rat.${currentSetId}.options.${option}`)}</p>
             )}
