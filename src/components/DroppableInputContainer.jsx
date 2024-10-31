@@ -8,7 +8,7 @@ function DroppableInputContainer({ data, handleDataChange, currentSetId, options
     <div className="flex flex-col md:flex-row justify-between mx-2 font-semibold md:w-full">
       {options.map((option, index) => (
         <div key={index} className="flex flex-row ">
-          <li className="flex flex-row">
+          <li className="flex flex-row mx-4 md:mx-auto">
             <DroppableInput
               handleDataChange={handleDataChange}
               currentSetId={currentSetId}

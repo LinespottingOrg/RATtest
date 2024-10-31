@@ -12,7 +12,7 @@
   },
   "resultpage": {
     "end_button": "Avsluta Test",
-    "mail_button": "Få mail",
+    "mail_button": "Resultat På Mail",
     "mail_prompt": "Psst...vill du ha resultatet på mail?",
     "conflict": "Vid konflikt",
     "non_conflict": "När allt är bra",

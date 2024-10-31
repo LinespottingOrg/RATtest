@@ -6,7 +6,7 @@ import { returnResultValues } from '../../utils/lasTestUtils'
 function LasResultChart({ result }) {
   const { t } = useTranslation()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650)
-
+  const SHORT_NAME_MAX_LENGTH = 12
   const scores = returnResultValues(result)
 
   useEffect(() => {
@@ -15,7 +15,33 @@ function LasResultChart({ result }) {
     return () => window.removeEventListener('resize', handleScreenResize)
   })
 
-  const data = [
+  const shortenName = (name, maxLength) => {
+    if (name.length > maxLength) {
+      return name.substring(0, maxLength) + '...'
+    }
+    return name
+  }
+
+  const shortData = [
+    {
+      name: shortenName(t('learning_styles.concrete_experiences.style'), SHORT_NAME_MAX_LENGTH),
+      value: scores.concrete_experiences,
+    },
+    {
+      name: shortenName(t('learning_styles.reflective_observation.style'), SHORT_NAME_MAX_LENGTH),
+      value: scores.reflective_observation,
+    },
+    {
+      name: shortenName(t('learning_styles.abstract_thinking.style'), SHORT_NAME_MAX_LENGTH),
+      value: scores.abstract_thinking,
+    },
+    {
+      name: shortenName(t('learning_styles.active_experimentation.style'), SHORT_NAME_MAX_LENGTH),
+      value: scores.active_experimentation,
+    },
+  ]
+
+  const longData = [
     { name: t('learning_styles.concrete_experiences.style'), value: scores.concrete_experiences },
     { name: t('learning_styles.reflective_observation.style'), value: scores.reflective_observation },
     { name: t('learning_styles.abstract_thinking.style'), value: scores.abstract_thinking },
@@ -23,6 +49,7 @@ function LasResultChart({ result }) {
   ]
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']
+  const data = isSmallScreen ? shortData : longData
 
   return (
     <ResponsiveContainer width="100%" aspect={2}>

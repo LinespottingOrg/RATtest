@@ -80,7 +80,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
     <div className="flex md:flex-row md:h-1024 md:max-w-1440 mx-auto text-customTextColor font-poppins h-full">
       <div className="w-20% text-center hidden md:flex flex-col justify-between bg-gradient-to-r from-primary">
         <div>
-          <h1 className="text-2xl md:text-2xl mt-2 font-bold">Learning Style Assessment</h1>
+          <h1 className="text-2xl md:text-2xl my-8 font-bold">Learning Style Assessment</h1>
           <label className="flex cursor-pointer gap-2 justify-center">
             <span className="label-text">Swedish</span>
             <input type="checkbox" checked={isEnglish} className="toggle" onChange={handleTranslation} />
@@ -92,15 +92,15 @@ function LASTestPage({ handleTranslation, isEnglish }) {
         </div>
       </div>
       {testFinished ? (
-        <div className="md:w-80%">
+        <div className="md:w-80% bg-gradient-to-t from-primary md:bg-none">
           <LasTestResult data={data} />
         </div>
       ) : (
-        <div className="md:w-80% flex flex-col h-full">
+        <div className="md:w-80% flex flex-col h-full bg-gradient-to-b from-primary md:bg-none">
           <div className="flex md:flex-row flex-grow">
-            <div className="hidden md:block w-20%">
-              <div className="mt-auto h-testRightLogoSize w-testRightLogoSize mx-auto">
-                <img src={LasLogo3} alt="LAS LOGO" className="w-full h-full object-contain" />
+            <div className="hidden md:flex w-20% h-full items-center justify-center">
+              <div className="h-testRightLogoSize w-testRightLogoSize">
+                <img src={LasLogo3} alt="LAS LOGO" className="w-full h-full object-contain " />
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">

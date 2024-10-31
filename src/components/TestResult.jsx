@@ -61,7 +61,7 @@ function TestResult({ data }) {
       <div className="flex justify-between items-center mx-2">
         <Button prompt={t('resultpage.end_button')} onClick={handleStopTestClick} />
         <div className="flex flex-row justify-end items-center mx-2">
-          <p className="mr-4">{t('resultpage.mail_prompt')}</p>
+          <p className="mr-4 hidden md:block">{t('resultpage.mail_prompt')}</p>
           <Button prompt={t('resultpage.mail_button')} />
         </div>
       </div>
