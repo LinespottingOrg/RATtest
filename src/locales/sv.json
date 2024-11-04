@@ -18,7 +18,13 @@
     "non_conflict": "När allt är bra",
     "learning_best": "Bäst för dig",
     "learning_worst": "Sämst för dig",
-    "return": "Backa"
+    "return": "Backa",
+    "modal": {
+      "heading": "Få resultat på mail?",
+      "send_button": "Skicka",
+      "discard_button": "Avbryt",
+      "confirmation": "Resultatet har skickats!"
+    }
   },
   "testpage": {
     "rat": {
