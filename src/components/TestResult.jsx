@@ -1,29 +1,78 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import RatResultChart from './ratComponents/RatResultChart'
-import Button from './Button'
-import { setTestResultValues, returnAwarenessPattern } from '../utils/ratTestUtils'
-import { useTranslation } from 'react-i18next'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import RatResultChart from "./ratComponents/RatResultChart";
+import Button from "./Button";
+import {
+  setTestResultValues,
+  returnAwarenessPattern,
+} from "../utils/ratTestUtils";
+import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
 function TestResult({ data }) {
-  const navigate = useNavigate()
-  const { t } = useTranslation()
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   const splitData = (data, from, until) => {
-    const entries = Object.entries(data)
-    return Object.fromEntries(entries.slice(from, until))
-  }
-  const nonConflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 0, 10)))
-  const conflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 10, 20)))
+    const entries = Object.entries(data);
+    return Object.fromEntries(entries.slice(from, until));
+  };
+  const nonConflictResults = returnAwarenessPattern(
+    setTestResultValues(splitData(data, 0, 10))
+  );
+  const conflictResults = returnAwarenessPattern(
+    setTestResultValues(splitData(data, 10, 20))
+  );
+
+  const fullNonConflictValues = setTestResultValues(splitData(data, 0, 10));
+  const fullConflictValues = setTestResultValues(splitData(data, 10, 20));
 
   const handleStopTestClick = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   const awarenessTypeKeyMap = {
-    'Analytical & Independent': 'analytical_independent',
-    'Selfless & Nurturing': 'selfless_nurturing',
-    'Assertive & Direct': 'assertive_direct',
-  }
+    "Analytical & Independent": "analytical_independent",
+    "Selfless & Nurturing": "selfless_nurturing",
+    "Assertive & Direct": "assertive_direct",
+  };
+
+  const emailParams = {
+    to_email: "jockehaansen@hotmail.com",
+    non_conflict_awarenessType: nonConflictResults.awarenessType,
+    non_conflict_animalType: nonConflictResults.animalType,
+    non_conflict_summary: nonConflictResults.summary,
+    conflict_awarenessType: conflictResults.awarenessType,
+    conflict_animalType: conflictResults.animalType,
+    conflict_summary: conflictResults.summary,
+    analytical_independent: "Analytical & Independent",
+    selfless_nurturing: "Selfless & Nurturing",
+    assertive_direct: "Assertive & Direct",
+    non_conflict_analytical_independent: fullNonConflictValues.autonomy,
+    non_conflict_selfless_nurturing: fullNonConflictValues.helper,
+    non_conflict_assertive_direct: fullNonConflictValues.influence,
+    conflict_analytical_independent: fullConflictValues.autonomy,
+    conflict_selfless_nurturing: fullConflictValues.helper,
+    conflict_assertive_direct: fullConflictValues.influence,
+  };
+
+  const sendEmail = () => {
+    emailjs
+      .send(
+        "service_zwdj6q5", // Replace with your EmailJS service ID
+        "template_eyzajr9", // Replace with your EmailJS template ID
+        emailParams // Data object with dynamic parameters
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Email sent successfully!");
+        },
+        (error) => {
+          console.error("Error sending email:", error.text);
+          alert("Failed to send email. Please try again.");
+        }
+      );
+  };
 
   return (
     <div className="w-full mx-auto text-center flex flex-col h-full">
@@ -33,41 +82,76 @@ function TestResult({ data }) {
       </div>
       <div className="flex flex-col md:flex-row flex-grow">
         <div className="m-2 flex-grow">
-          <p className="text-xl font-semibold my-2">{t('resultpage.non_conflict')}</p>
+          <p className="text-xl font-semibold my-2">
+            {t("resultpage.non_conflict")}
+          </p>
           <hr className="border border-primary mx-8" />
           <p className="font-semibold my-2">
-            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.type`)}
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[nonConflictResults.awarenessType]
+              }.type`
+            )}
           </p>
           <p className="font-semibold">
-            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.animal`)}
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[nonConflictResults.awarenessType]
+              }.animal`
+            )}
           </p>
           <hr className="border border-primary mx-4 my-2" />
-          <p>{t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.summary`)}</p>
+          <p>
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[nonConflictResults.awarenessType]
+              }.summary`
+            )}
+          </p>
         </div>
         <div className="hidden md:block w-px h-vh my-5 bg-primary mx-4 blur-sm" />
         <div className="m-2 flex-grow">
-          <p className="text-xl font-semibold my-2">{t('resultpage.conflict')}</p>
+          <p className="text-xl font-semibold my-2">
+            {t("resultpage.conflict")}
+          </p>
           <hr className="border border-primary mx-8" />
           <p className="font-semibold my-2">
-            {t(`awareness_types.${awarenessTypeKeyMap[conflictResults.awarenessType]}.type`)}
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[conflictResults.awarenessType]
+              }.type`
+            )}
           </p>
           <p className="font-semibold">
-            {t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.animal`)}
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[nonConflictResults.awarenessType]
+              }.animal`
+            )}
           </p>
           <hr className="border border-primary mx-4 my-2" />
-          <p>{t(`awareness_types.${awarenessTypeKeyMap[nonConflictResults.awarenessType]}.summary`)}</p>
+          <p>
+            {t(
+              `awareness_types.${
+                awarenessTypeKeyMap[nonConflictResults.awarenessType]
+              }.summary`
+            )}
+          </p>
         </div>
       </div>
       <div className="flex justify-between items-center mx-2">
-        <Button prompt={t('resultpage.end_button')} onClick={handleStopTestClick} />
+        <Button
+          prompt={t("resultpage.end_button")}
+          onClick={handleStopTestClick}
+        />
         <div className="flex flex-row justify-end items-center mx-2">
-          <p className="mr-4 hidden md:block">{t('resultpage.mail_prompt')}</p>
-          <Button prompt={t('resultpage.mail_button')} />
+          <p className="mr-4 hidden md:block">{t("resultpage.mail_prompt")}</p>
+          <Button prompt={t("resultpage.mail_button")} onClick={sendEmail} />
         </div>
       </div>
       <div className="flex flex-row justify-between m-2 "></div>
     </div>
-  )
+  );
 }
 
-export default TestResult
+export default TestResult;
