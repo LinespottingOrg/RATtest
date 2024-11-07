@@ -259,19 +259,19 @@
   },
   "awareness_types": {
     "selfless_nurturing": {
-      "type": "Osjälvisk & Vårdande",
-      "animal": "St.Bernard Hund",
-      "summary": "Den osjälviska och vårdande karaktären kännetecknas av deras strävan att uppnå harmoni med andra och se till att alla mår bra, utan att förvänta sig mycket i gengäld."
+      "type": "Osjälvisk & Omtänksam",
+      "animal": "Sankt Bernhardshund",
+      "summary": "Den osjälviska och omtänksamma typen förkroppsligar en medkännande och omhändertagande anda, likt en Sankt Bernhardshund som är känd för sin lojalitet och skyddande natur. Denna person finner djup tillfredsställelse i att skapa positiva relationer och säkerställa att andra omkring dem känner sig trygga, glada och förstådda. De värdesätter empati högt och drivs av en känsla av ansvar för att lyfta de i behov, ofta genom att sätta andras behov framför sina egna."
     },
     "assertive_direct": {
-      "type": "Påstridig & Direkt",
+      "type": "Självsäker & Direkt",
       "animal": "Lejon",
-      "summary": "Den bestämda och direkta personen strävar efter att vara rak på sak, vill vägleda andras aktiviteter och önskar erkännande från andra."
+      "summary": "Den självsäkra och direkta typen utstrålar självförtroende, styrka och en naturlig karisma som drar andra till dem, likt ett lejon som ofta ses som 'djungelns kung'. Individer med denna medvetenhetstyp är inte rädda för att ta ledningen och sätta upp tydliga, avgörande vägar för sig själva och de omkring dem. De värderar ärlighet och är inte rädda för att uttrycka sina tankar direkt, då de tror att öppenhet leder till effektivitet. Deras närvaro är ofta inspirerande, och de uppmuntrar andra att lita på deras vägledning och följa deras exempel."
     },
     "analytical_independent": {
       "type": "Analytisk & Självständig",
       "animal": "Uggla",
-      "summary": "Den analytiska och självständiga personen strävar efter att vara självförsörjande, självständig, eftertänksam och logisk."
+      "summary": "Den analytiska och självständiga typen är en djup tänkare med ett skarpt sinne för logik och en törst efter förståelse, ofta symboliserad av den visa ugglan. De föredrar att observera, analysera och reflektera, och finner ro i ensamhet där de kan följa sina intellektuella intressen utan distraktion. Dessa individer är mycket självförsörjande, värderar oberoende och personlig autonomi, eftersom de tror att ett välgrundat sinne är nyckeln till att fatta kloka beslut. Kända för sitt metodiska tillvägagångssätt, utmärker de sig i uppgifter som kräver kritiskt tänkande, uppmärksamhet på detaljer och noggrann planering."
     }
   },
   "learning_styles": {
