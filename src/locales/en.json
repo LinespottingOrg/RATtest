@@ -18,7 +18,13 @@
     "non_conflict": "When All is Well",
     "learning_best": "Best for You",
     "learning_worst": "Worst for You",
-    "return": "Return"
+    "return": "Return",
+    "modal": {
+      "heading": "Get email results?",
+      "send_button": "Send",
+      "discard_button": "Discard",
+      "confirmation": "Results have been sent!"
+    }
   },
   "testpage": {
     "rat": {
