@@ -1,11 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import RatResultChart from "./ratComponents/RatResultChart";
 import Button from "./Button";
-import {
-  setTestResultValues,
-  returnAwarenessPattern,
-} from "../utils/ratTestUtils";
 import { useTranslation } from "react-i18next";
 import LasResultChart from "./lasComponents/LasResultChart";
 import {
@@ -13,6 +8,7 @@ import {
   returnResultValues,
   returnWorstLearningStyle,
 } from "../utils/lasTestUtils";
+import EmailModal from "./EmailModal";
 
 function LasTestResult({ data }) {
   const navigate = useNavigate();
@@ -91,6 +87,11 @@ function LasTestResult({ data }) {
         <div className="flex flex-row justify-end items-center mx-2">
           <p className="mr-4 hidden md:block">{t("resultpage.mail_prompt")}</p>
           <Button prompt={t("resultpage.mail_button")} />
+          <EmailModal
+            data={data}
+            prompt={t("resultpage.mail_button")}
+            test={"LAS"}
+          />
         </div>
       </div>
       <div className="flex flex-row justify-between m-2 "></div>
