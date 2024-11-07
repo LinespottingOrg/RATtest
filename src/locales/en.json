@@ -261,17 +261,17 @@
     "selfless_nurturing": {
       "type": "Selfless & Caring",
       "animal": "St. Bernard Dog",
-      "summary": "The selfless and caring character is marked by their pursuit of harmony with others and a desire to ensure everyone feels good without expecting much in return."
+      "summary": "The Selfless & Caring type embodies a compassionate and nurturing spirit, much like a St. Bernard dog, known for its loyalty and protective nature. This person finds deep fulfillment in fostering positive connections and ensuring that others around them feel secure, happy, and understood. They place a high value on empathy and are driven by a sense of duty to uplift those in need, often putting others' needs before their own."
     },
     "assertive_direct": {
       "type": "Assertive & Direct",
       "animal": "Lion",
-      "summary": "The assertive and direct person strives to be straightforward, wants to guide others' activities, and seeks recognition from others."
+      "summary": "The Assertive & Direct type exudes confidence, strength, and a natural charisma that draws others to them, much like a lion, often seen as the 'king of the jungle.' Individuals with this awareness type are not afraid to take charge and set clear, decisive paths for themselves and those around them. They value honesty and are unafraid to communicate their thoughts directly, as they believe that transparency leads to effectiveness. Their presence is often inspiring, encouraging others to trust their guidance and follow their lead."
     },
     "analytical_independent": {
       "type": "Analytical & Independent",
       "animal": "Owl",
-      "summary": "The analytical and independent person aims to be self-sufficient, independent, thoughtful, and logical."
+      "summary": "The Analytical & Independent type is a deep thinker with a keen sense of logic and a thirst for understanding, often symbolized by the wise owl. They prefer to observe, analyze, and reflect, finding solace in solitude, where they can pursue their intellectual interests without distraction. These individuals are highly self-sufficient, valuing independence and personal autonomy, as they believe that a well-informed mind is the key to making sound decisions. Known for their methodical approach, they excel at tasks that require critical thinking, attention to detail, and careful planning."
     }
   },
   "learning_styles": {
