@@ -6,7 +6,7 @@ import Button from "./Button";
 import ratEmailParams from "../utils/ratEmailParams";
 import lasEmailParams from "../utils/lasEmailParams";
 
-function EmailModal({ data, prompt, test }) {
+function EmailModal({ data, prompt, test, "data-testid": testId }) {
   const { t } = useTranslation();
   const [userEmail, setUserEmail] = useState("");
   const [error, setError] = useState(null);
@@ -16,10 +16,16 @@ function EmailModal({ data, prompt, test }) {
   const emailParams =
     test === "RAT"
       ? ratEmailParams(data, userEmail)
-      : lasEmailParams(data, userEmail);
+      : test === "LAS"
+      ? lasEmailParams(data, userEmail)
+      : null;
 
   const emailTemplate =
-    test === "RAT" ? "template_eyzajr9" : "template_552vb9b";
+    test === "RAT"
+      ? "template_eyzajr9"
+      : test === "LAS"
+      ? "template_552vb9b"
+      : null;
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,6 +76,7 @@ function EmailModal({ data, prompt, test }) {
       <Button
         prompt={prompt}
         onClick={() => document.getElementById("my_modal_5").showModal()}
+        data-testid={testId}
       />
 
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
@@ -93,7 +100,11 @@ function EmailModal({ data, prompt, test }) {
                         onChange={handleEmailChange}
                         className="input"
                       />
-                      {error && <p className="text-red-500 text-sm">{error}</p>}
+                      {error && (
+                        <p className="text-red-500 text-sm" data-testid="error">
+                          {error}
+                        </p>
+                      )}
                     </label>
                     <button
                       className="btn btn-primary text-white mr-2"
@@ -112,7 +123,11 @@ function EmailModal({ data, prompt, test }) {
                   </div>
                 )}
               </div>
-              <button className="btn btn-error text-white" onClick={clearInput}>
+              <button
+                className="btn btn-error text-white"
+                onClick={clearInput}
+                data-testid="modalDiscardButton"
+              >
                 {t("resultpage.modal.discard_button")}
               </button>
             </form>

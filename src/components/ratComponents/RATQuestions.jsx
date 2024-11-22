@@ -9,10 +9,10 @@ function RATQuestions({ data, currentSetId, handleDataChange }) {
   return (
     <div>
       <h1 className="md:text-xl font-semibold text-center my-4">{t(`data.rat.${currentSetId}.statement`)}</h1>
-      <div className="space-y-4">
+      <div className="space-y-4" data-testid="draggableNumberContainer">
         <DraggableNumberContainer amount={10} data={data} currentSetId={currentSetId} test={'RAT'} />
       </div>
-      <div className="flex my-8">
+      <div className="flex my-8" data-testid="droppableInputContainer">
         <ul className="flex flex-col md:flex-row w-full">
           <DroppableInputContainer
             data={data}

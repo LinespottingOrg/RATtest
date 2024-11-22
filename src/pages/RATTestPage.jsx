@@ -17,6 +17,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  /* ---------------------- Updates the values in ratData --------------------- */
   const handleRatValueChange = (setId, promptKey, newValue, inputSet) => {
     setData((prevData) => {
       const updatedSet = {
@@ -63,7 +64,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
     handleRatValueChange(currentSetId, promptKey1, 1, true);
     handleRatValueChange(currentSetId, promptKey2, 3, true);
     handleRatValueChange(currentSetId, promptKey3, 6, true);
-    handleRenderNextSet();
+    //handleRenderNextSet()
   };
   /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
 
@@ -89,6 +90,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
               checked={isEnglish}
               className="toggle"
               onChange={handleTranslation}
+              data-testid="translationToggle"
             />
             <span className="label-text">English</span>
           </label>
@@ -96,13 +98,16 @@ function RATTestPage({ handleTranslation, isEnglish }) {
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
           <img
             src={RATLogo1}
-            alt="RAT LOGO"
+            alt="rat logo 1"
             className="w-full h-full object-contain"
           />
         </div>
       </div>
       {testFinished ? (
-        <div className="md:w-80% bg-gradient-to-t from-primary md:bg-none">
+        <div
+          className="md:w-80% bg-gradient-to-t from-primary md:bg-none"
+          data-testid="ratResultPanel"
+        >
           <RatTestResult data={data} />
         </div>
       ) : (
@@ -112,7 +117,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
               <div className="h-testRightLogoSize w-testRightLogoSize">
                 <img
                   src={RATLogo3}
-                  alt="RAT LOGO"
+                  alt="rat logo 3"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -146,12 +151,19 @@ function RATTestPage({ handleTranslation, isEnglish }) {
             />
             <div className="flex flex-row">
               {currentSetId <= 1 ? (
-                <button className="text-gray-300" disabled>
+                <button
+                  className="text-gray-300"
+                  data-testid="prevSetButton"
+                  disabled
+                >
                   <FaAngleLeft />
                 </button>
               ) : (
                 <button>
-                  <FaAngleLeft onClick={handleRenderPreviousSet} />
+                  <FaAngleLeft
+                    onClick={handleRenderPreviousSet}
+                    data-testid="prevSetButton"
+                  />
                 </button>
               )}
 
@@ -161,11 +173,18 @@ function RATTestPage({ handleTranslation, isEnglish }) {
                 max="20"
               ></progress>
               {data[currentSetId].answered && currentSetId !== 20 ? (
-                <button onClick={handleRenderNextSet}>
+                <button
+                  onClick={handleRenderNextSet}
+                  data-testid="nextSetButton"
+                >
                   <FaAngleRight />
                 </button>
               ) : (
-                <button className="text-gray-300" disabled>
+                <button
+                  className="text-gray-300"
+                  data-testid="nextSetButton"
+                  disabled
+                >
                   <FaAngleRight />
                 </button>
               )}
@@ -173,6 +192,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
             {/********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET,
             REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             <button
+              data-testid="testButton"
               className="btn btn-secondary "
               onClick={() => testSetAnswers("helper", "influence", "autonomy")}
             >
@@ -183,12 +203,16 @@ function RATTestPage({ handleTranslation, isEnglish }) {
             {data[currentSetId].answered && currentSetId === 20 ? (
               <Button
                 prompt={t("testpage.result_button")}
+                disabled={false}
                 onClick={handleShowResults}
+                data-testid="resultButton"
               />
             ) : (
-              <button className="btn btn-secondary text-white" disabled>
-                {t("testpage.result_button")}
-              </button>
+              <Button
+                prompt={t("testpage.result_button")}
+                disabled={true}
+                data-testid="resultButton"
+              />
             )}
           </div>
         </div>

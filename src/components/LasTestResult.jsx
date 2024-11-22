@@ -83,6 +83,7 @@ function LasTestResult({ data }) {
         <Button
           prompt={t("resultpage.end_button")}
           onClick={handleStopTestClick}
+          data-testid={"endTestButton"}
         />
         <div className="flex flex-row justify-end items-center mx-2">
           <p className="mr-4 hidden md:block">{t("resultpage.mail_prompt")}</p>
@@ -90,6 +91,7 @@ function LasTestResult({ data }) {
             data={data}
             prompt={t("resultpage.mail_button")}
             test={"LAS"}
+            data-testid={"emailModal"}
           />
         </div>
       </div>

@@ -1,10 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { DndProvider } from "react-dnd";
 import { TouchBackend } from "react-dnd-touch-backend";
-import { initReactI18next } from "react-i18next";
-import i18n from "i18next";
-import translationSV from "./locales/sv.json";
-import translationEN from "./locales/en.json";
+import i18n from "./utils/i18n";
 import HomePage from "./pages/HomePage";
 import RATTestPage from "./pages/RATTestPage";
 import DragLayer from "./components/DragLayer";
@@ -12,16 +9,6 @@ import LASTestPage from "./pages/LASTestPage";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-
-i18n.use(initReactI18next).init({
-  resources: {
-    sv: { translation: translationSV },
-    en: { translation: translationEN },
-  },
-  lng: "sv",
-  fallbackLng: "en",
-  interpolation: { escapeValue: false },
-});
 
 function App() {
   const { i18n } = useTranslation();

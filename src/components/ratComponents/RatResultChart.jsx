@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { setTestResultValues } from '../../utils/ratTestUtils'
 
-function RatResultChart({ results }) {
+function RatResultChart({ results, 'data-testid': testId }) {
   const splitData = (data, from, until) => {
     const entries = Object.entries(data)
     return Object.fromEntries(entries.slice(from, until))
@@ -44,7 +44,7 @@ function RatResultChart({ results }) {
 
   return (
     <ResponsiveContainer width="100%" aspect={2}>
-      <RadarChart cx="50%" cy="70%" outerRadius="100%" data={data}>
+      <RadarChart cx="50%" cy="70%" outerRadius="100%" data={data} data-testid={testId}>
         <PolarGrid />
         <PolarAngleAxis
           dataKey="name"

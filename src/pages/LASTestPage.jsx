@@ -18,8 +18,6 @@ function LASTestPage({ handleTranslation, isEnglish }) {
   const { t } = useTranslation();
 
   const handleDataChange = (setId, promptKey, newValue, inputSet) => {
-    console.log("Data before change:", data[setId]);
-
     setData((prevData) => {
       const updatedSet = {
         ...prevData[setId],
@@ -39,8 +37,6 @@ function LASTestPage({ handleTranslation, isEnglish }) {
       );
 
       const answered = usedAmount === 10;
-
-      console.log(`UpdatedSet ${setId}:`, updatedSet);
 
       return {
         ...prevData,
@@ -67,7 +63,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
     handleDataChange(currentSetId, prompt2, 2, true);
     handleDataChange(currentSetId, prompt3, 3, true);
     handleDataChange(currentSetId, prompt4, 4, true);
-    handleRenderNextSet();
+    //handleRenderNextSet();
   };
   /********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET ****************************/
 
@@ -100,13 +96,13 @@ function LASTestPage({ handleTranslation, isEnglish }) {
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
           <img
             src={LasLogo1}
-            alt="LAS LOGO"
+            alt="LAS LOGO 1"
             className="w-full h-full object-contain"
           />
         </div>
       </div>
       {testFinished ? (
-        <div className="md:w-80% h-full">
+        <div className="md:w-80% h-full" data-testid="resultPanel">
           <LasTestResult data={data} />
         </div>
       ) : (
@@ -116,7 +112,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
               <div className="h-testRightLogoSize w-testRightLogoSize">
                 <img
                   src={LasLogo3}
-                  alt="LAS LOGO"
+                  alt="LAS LOGO 3"
                   className="w-full h-full object-contain "
                 />
               </div>
@@ -149,7 +145,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
               {t("testpage.drag_and_drop")}
             </p>
           </div>
-          <div className="flex-grow">
+          <div className="flex-grow" data-testid="questionPanel">
             <LASQuestions
               data={data}
               currentSetId={currentSetId}
@@ -160,15 +156,23 @@ function LASTestPage({ handleTranslation, isEnglish }) {
             <Button
               prompt={t("resultpage.return")}
               onClick={handleGoBackClick}
+              data-testid={"returnButton"}
             />
             <div className="flex flex-row">
               {currentSetId <= 1 ? (
-                <button className="text-gray-300" disabled>
+                <button
+                  className="text-gray-300"
+                  disabled
+                  data-testid="prevPromptButton"
+                >
                   <FaAngleLeft />
                 </button>
               ) : (
                 <button>
-                  <FaAngleLeft onClick={handleRenderPreviousSet} />
+                  <FaAngleLeft
+                    onClick={handleRenderPreviousSet}
+                    data-testid="prevPromptButton"
+                  />
                 </button>
               )}
 
@@ -176,18 +180,27 @@ function LASTestPage({ handleTranslation, isEnglish }) {
                 className="progress progress-primary w-24 md:w-56 mx-6 self-center"
                 value={currentSetId}
                 max="9"
+                data-testid="progressbar"
               ></progress>
               {data[currentSetId].answered && currentSetId !== 9 ? (
-                <button onClick={handleRenderNextSet}>
+                <button
+                  onClick={handleRenderNextSet}
+                  data-testid="nextPromptButton"
+                >
                   <FaAngleRight />
                 </button>
               ) : (
-                <button className="text-gray-300" disabled>
+                <button
+                  className="text-gray-300"
+                  disabled
+                  data-testid="nextPromptButton"
+                >
                   <FaAngleRight />
                 </button>
               )}
             </div>
             <button
+              data-testid="testSetButton"
               className="btn btn-secondary "
               onClick={() =>
                 testSetAnswers(
@@ -204,11 +217,15 @@ function LASTestPage({ handleTranslation, isEnglish }) {
               <Button
                 prompt={t("testpage.result_button")}
                 onClick={handleShowResults}
+                data-testid={"resultButton"}
+                disabled={false}
               />
             ) : (
-              <button className="btn btn-secondary text-white" disabled>
-                {t("testpage.result_button")}
-              </button>
+              <Button
+                prompt={t("testpage.result_button")}
+                data-testid={"resultButton"}
+                disabled={true}
+              />
             )}
           </div>
         </div>
