@@ -1,5 +1,6 @@
 import { learningStyles } from '../data/learningStylesData'
 
+/* -------- checks and returns valid numbers for the draggableNumber -------- */
 export function returnValidLasNumbers(amount, data, currentSetId) {
   const possibleNumbers = Array.from({ length: amount }, (_, index) => index + 1)
   const usedValues = Object.values(data[currentSetId].options).map((option) => option.value)
@@ -7,6 +8,7 @@ export function returnValidLasNumbers(amount, data, currentSetId) {
   return validNumbers
 }
 
+/* --------- calculates and returns the sum of values from the data --------- */
 export function returnResultValues(data) {
   const values = { concrete_experiences: 0, reflective_observation: 0, abstract_thinking: 0, active_experimentation: 0 }
   for (const key in data) {
@@ -18,6 +20,8 @@ export function returnResultValues(data) {
   return values
 }
 
+/* -------- calculates and returns the highest key from all the data -------- */
+/* ------------------- does not support returning 2 values ------------------ */
 export function returnBestLearningStyle(data) {
   const highestKey = Object.entries(data).reduce(
     (highest, [key, value]) => (value > data[highest] ? key : highest),
@@ -38,13 +42,15 @@ export function returnBestLearningStyle(data) {
   }
 }
 
+/* -------- calculates and returns the lowest key from all the data -------- */
+/* ------------------- does not support returning 2 values ------------------ */
 export function returnWorstLearningStyle(data) {
-  const highestKey = Object.entries(data).reduce(
-    (highest, [key, value]) => (value < data[highest] ? key : highest),
+  const lowestKey = Object.entries(data).reduce(
+    (lowest, [key, value]) => (value < data[lowest] ? key : lowest),
     Object.keys(data)[0]
   )
 
-  switch (highestKey) {
+  switch (lowestKey) {
     case 'concrete_experiences':
       return learningStyles.concrete_experiences
     case 'reflective_observation':

@@ -1,5 +1,7 @@
 import splitData from './splitData'
 import { setTestResultValues, returnAwarenessPattern } from './ratTestUtils'
+
+/* -------------------- setting email params for emailjs -------------------- */
 const ratEmailParams = (data, userEmail) => {
   const fullNonConflictValues = setTestResultValues(splitData(data, 0, 10))
   const fullConflictValues = setTestResultValues(splitData(data, 10, 20))
