@@ -9,6 +9,7 @@ import LASTestPage from './pages/LASTestPage'
 import { useTranslation } from 'react-i18next'
 import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
+import ScrollToTopOfPage from './components/ScrollToTopOfPage'
 
 function App() {
   /* ------------------- initializing i18n for translations ------------------- */
@@ -31,6 +32,7 @@ function App() {
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
         <DragLayer />
         <Router>
+          <ScrollToTopOfPage />
           <Routes>
             <Route path="/" element={<HomePage toggleLanguage={toggleLanguage} isEnglish={isEnglish} />} />
             <Route
