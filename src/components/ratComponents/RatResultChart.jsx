@@ -14,17 +14,24 @@ import { setTestResultValues } from "../../utils/ratTestUtils";
 import splitData from "../../utils/splitData";
 
 function RatResultChart({ results, "data-testid": testId }) {
-  const nonConflictScores = setTestResultValues(splitData(results, 0, 10));
-  const conflictScores = setTestResultValues(splitData(results, 10, 20));
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650);
+  /* i18n translation utility */
   const { t } = useTranslation();
 
+  /* UseState to handle resizing of the chart properties on smaller devices */
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650);
+
+  /* variables to hold the conflict & non conflict scores */
+  const nonConflictScores = setTestResultValues(splitData(results, 0, 10));
+  const conflictScores = setTestResultValues(splitData(results, 10, 20));
+
+  /* listening to the window size and updates the isSmallScreen state */
   useEffect(() => {
     const handleScreenResize = () => setIsSmallScreen(window.innerWidth < 650);
     window.addEventListener("resize", handleScreenResize);
     return () => window.removeEventListener("resize", handleScreenResize);
   });
 
+  /* holds the data to be displayed in the chart */
   const data = [
     {
       name: t("awareness_types.selfless_nurturing.type"),

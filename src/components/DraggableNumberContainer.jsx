@@ -4,10 +4,16 @@ import { returnValidRatNumbers } from "../utils/ratTestUtils";
 import { returnValidLasNumbers } from "../utils/lasTestUtils";
 
 function DraggableNumberContainer({ amount, data, currentSetId, test }) {
+  /* holds the current valid numbers to be enabled for dragging */
   const [validNumbers, setValidNumbers] = useState([]);
+
+  // FIXME: checkk if this is needed since we pass in amount
   if (test === "LAS") {
     setValidNumbers[(1, 2, 3, 4)];
   }
+
+  /* sets the valid numbers based on test type, using different functions */
+  //FIXME: refactor codeblock into more readable
   useEffect(() => {
     if (test == "RAT") {
       setValidNumbers(returnValidRatNumbers(amount, data, currentSetId));
@@ -16,6 +22,8 @@ function DraggableNumberContainer({ amount, data, currentSetId, test }) {
     }
   }, [amount, data[currentSetId], data[currentSetId]]);
 
+  /* returns a list of DraggableNumbers from the valid numbers available to be rendered */
+  //FIXME: refactor the valid prop into draggable numbers for future ease of development
   const renderDraggableNumbers = (start, end) => {
     return Array.from({ length: end - start }, (_, index) => (
       <li key={index}>
