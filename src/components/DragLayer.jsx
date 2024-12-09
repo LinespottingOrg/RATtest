@@ -2,6 +2,7 @@ import React from 'react'
 import { useDragLayer } from 'react-dnd'
 
 function DragLayer() {
+  /* react dnd utility to support the draglayer needed to use drag and drop */
   const { isDragging, item, currentOffset } = useDragLayer((monitor) => ({
     isDragging: monitor.isDragging(),
     item: monitor.getItem(),
@@ -13,6 +14,7 @@ function DragLayer() {
   }
 
   return (
+    /* styling for the item object being dragged */
     <div
       style={{
         position: 'absolute',

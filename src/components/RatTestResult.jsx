@@ -8,15 +8,22 @@ import { useTranslation } from 'react-i18next'
 import splitData from '../utils/splitData'
 
 function TestResult({ data }) {
-  const navigate = useNavigate()
+  /* i18n translation utility */
   const { t } = useTranslation()
-  const nonConflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 0, 10)))
-  const conflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 10, 20)))
 
+  /* react navigation utility */
+  const navigate = useNavigate()
+
+  /* takes the user back to the homepage */
   const handleStopTestClick = () => {
     navigate('/')
   }
 
+  /* variables to hold the results */
+  const nonConflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 0, 10)))
+  const conflictResults = returnAwarenessPattern(setTestResultValues(splitData(data, 10, 20)))
+
+  /* keymapper to map the options in data to more readable results */
   const awarenessTypeKeyMap = {
     'Analytical & Independent': 'analytical_independent',
     'Selfless & Nurturing': 'selfless_nurturing',
