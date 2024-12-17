@@ -7,14 +7,24 @@ import ratEmailParams from "../utils/ratEmailParams";
 import lasEmailParams from "../utils/lasEmailParams";
 
 function EmailModal({ data, prompt, test, "data-testid": testId }) {
+  /* i18n translation utility */
   const { t } = useTranslation();
+
+  /* user email state */
   const [userEmail, setUserEmail] = useState("");
+
+  /* error state for handling for user email input */
   const [error, setError] = useState(null);
+
+  /* email status state, keeps track of where in the point of sending the email the user is */
   const [isSending, setIsSending] = useState(false);
+
+  /* state to check if email has been sent successfully */
   const [isSent, setIsSent] = useState(false);
 
   const emailServiceKey = import.meta.env.VITE_EMAILJS_SERVICE_KEY;
 
+  /* determines what type of email parameters to send with the email */
   const emailParams =
     test === "RAT"
       ? ratEmailParams(data, userEmail)
@@ -22,6 +32,7 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
       ? lasEmailParams(data, userEmail)
       : null;
 
+  /* determines what email template to use */
   const emailTemplate =
     test === "RAT"
       ? import.meta.env.VITE_EMAILJS_RAT_TEMPLATE_KEY
@@ -29,11 +40,13 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
       ? import.meta.env.VITE_EMAILJS_LAS_TEMPLATE_KEY
       : null;
 
+  /* validates the user email wth a basic regex */
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
+  /* handles the user email state change from the email input box */
   const handleEmailChange = (e) => {
     const email = e.target.value;
     setUserEmail(email);
@@ -44,12 +57,14 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
     }
   };
 
+  /* resets the email process */
   const clearInput = () => {
     setUserEmail("");
     setError(null);
     setIsSent(false);
   };
 
+  /* tries to send the email with the values from the email states when called */
   const sendEmail = () => {
     if (!validateEmail(userEmail)) {
       setError("Please enter a valid email address");

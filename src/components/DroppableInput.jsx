@@ -3,6 +3,8 @@ import { useDrop } from 'react-dnd'
 
 function DroppableInput({ handleDataChange, option, currentSetId, data, test }) {
   const inputValue = data[currentSetId].options[option].value
+
+  /* handles the dropped action when a number is dropped into a input that can recieve it */
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: 'NUMBER',
@@ -16,6 +18,7 @@ function DroppableInput({ handleDataChange, option, currentSetId, data, test }) 
     [currentSetId]
   )
 
+  /* clears the data for that specific prompt, and in turn clears the droppable input */
   const handleClearInput = () => {
     handleDataChange(currentSetId, option, 0, false)
   }
