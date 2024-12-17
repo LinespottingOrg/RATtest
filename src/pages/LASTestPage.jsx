@@ -199,6 +199,8 @@ function LASTestPage({ handleTranslation, isEnglish }) {
                 </button>
               )}
             </div>
+            {/********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET,
+            REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             <button
               data-testid="testSetButton"
               className="btn btn-secondary hidden"
@@ -213,6 +215,8 @@ function LASTestPage({ handleTranslation, isEnglish }) {
             >
               Test: SetAnswers for set {currentSetId}
             </button>
+            {/********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET,
+            REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             {data[currentSetId].answered && currentSetId === 9 ? (
               <Button
                 prompt={t("testpage.result_button")}

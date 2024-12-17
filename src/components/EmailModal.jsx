@@ -13,6 +13,8 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  const emailServiceKey = import.meta.env.VITE_EMAILJS_SERVICE_KEY;
+
   const emailParams =
     test === "RAT"
       ? ratEmailParams(data, userEmail)
@@ -22,9 +24,9 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
 
   const emailTemplate =
     test === "RAT"
-      ? "template_eyzajr9"
+      ? import.meta.env.VITE_EMAILJS_RAT_TEMPLATE_KEY
       : test === "LAS"
-      ? "template_552vb9b"
+      ? import.meta.env.VITE_EMAILJS_LAS_TEMPLATE_KEY
       : null;
 
   const validateEmail = (email) => {
@@ -56,7 +58,7 @@ function EmailModal({ data, prompt, test, "data-testid": testId }) {
 
     setIsSending(true);
 
-    emailjs.send("service_zwdj6q5", emailTemplate, emailParams).then(
+    emailjs.send(emailServiceKey, emailTemplate, emailParams).then(
       (result) => {
         console.log("Email sent successfully:", result.text);
         setUserEmail("");

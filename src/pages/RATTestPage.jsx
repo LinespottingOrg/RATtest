@@ -189,7 +189,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
             REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             <button
               data-testid="testButton"
-              className="btn btn-secondary hidden"
+              className="btn btn-secondary"
               onClick={() => testSetAnswers("helper", "influence", "autonomy")}
             >
               Test: SetAnswers for set {currentSetId}
