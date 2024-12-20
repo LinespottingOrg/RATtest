@@ -278,22 +278,22 @@
     "concrete_experiences": {
       "style": "Konkreta Upplevelser",
       "summary_best": "Du lär dig bäst genom att vara direkt involverad i själva upplevelsen. Att känna, observera och vara närvarande i nuet är centralt för dig. Praktiska aktiviteter, där du kan använda dina sinnen och få direkt feedback, hjälper dig att ta till dig kunskap. Du drar lärdom av att interagera med omvärlden och värderar insikter från verkliga situationer.",
-      "summary_worst": "När konkreta upplevelser blir en utmaning för dig, kan du ha svårt att tillgodogöra dig information som kräver teoretiskt eller abstrakt tänkande. Utan en direkt koppling till verkliga upplevelser kan ditt engagemang minska, och du kan uppleva abstrakta teorier som ointressanta eller svårförståeliga. Att behöva observera utan att delta kan dessutom leda till att du tappar intresset och har svårt att fokusera."
+      "summary_worst": "Konkreta upplevelser är utmanande för dig och gör det svårt att ta till sig information som bygger på teoretiskt eller abstrakt tänkande. Utan en direkt koppling till verkliga erfarenheter minskar ditt engagemang, och abstrakta teorier känns ointressanta eller svåra att förstå. Att enbart observera utan att delta leder till bristande intresse och gör det svårare för dig att hålla fokus."
     },
     "reflective_observation": {
       "style": "Reflekterande Observation",
       "summary_best": "Du föredrar att ta ett steg tillbaka för att observera och reflektera över en situation innan du drar några slutsatser. Genom att betrakta olika perspektiv och detaljer skapar du en djupare förståelse. För dig är reflektion viktigt, och du känner dig mer bekväm när du kan analysera i lugn och ro innan du agerar.",
-      "summary_worst": "När reflekterande observation inte fungerar optimalt för dig, kan du fastna i att analysera och överväga alternativ utan att faktiskt agera. Beslutsfattande kan bli utdraget, och du kan ibland undvika att ta risker eftersom du känner dig tryggare i att bara observera. För mycket eftertanke kan hindra dig från att prova nya tillvägagångssätt."
+      "summary_worst": "Reflekterande observation fungerar inte optimalt för dig, vilket leder till att du fastnar i analys och överväger alternativ utan att agera. Beslutsfattande blir utdraget, och du tenderar att undvika risker, då du känner dig mer bekväm med att bara observera. Överdriven reflektion hindrar dig från att prova nya tillvägagångssätt och gå framåt."
     },
     "abstract_thinking": {
       "style": "Abstrakt Tänkande",
       "summary_best": "Du är en person som lär dig bäst genom att använda logik och intellekt för att förstå koncept och teorier. Du är nyfiken på att utforska underliggande principer och system och gillar att arbeta med abstrakta idéer. För dig är det viktigt att skapa en teoretisk förståelse och struktur i dina kunskaper.",
-      "summary_worst": "När abstrakt tänkande inte fungerar optimalt för dig, kan du ha svårt att engagera dig i praktiska eller vardagliga uppgifter. Du kan lätt fastna i att teoretisera och analysera, vilket ibland gör det svårt att omsätta kunskapen i praktiska handlingar. Att fokusera för mycket på detaljer och teorier kan göra att helheten förloras."
+      "summary_worst": "Abstrakt tänkande fungerar inte optimalt för dig, vilket gör det svårt att engagera sig i praktiska eller vardagliga uppgifter. Du fastnar ofta i teoriserande och analys, vilket gör det svårt att tillämpa kunskap på ett praktiskt sätt. Att fokusera för mycket på detaljer och teorier får dig att tappa bort den större bilden."
     },
     "active_experimentation": {
       "style": "Aktivt Experimenterande",
       "summary_best": "Du lär dig bäst genom att aktivt testa idéer och teorier i praktiken. Du är handlingsorienterad och tycker om att prova nya tillvägagångssätt och lösningar. För dig är det viktigt att snabbt kunna se resultaten av dina handlingar och anpassa dig därefter, vilket gör att du kan omsätta din kunskap i praktiska handlingar.",
-      "summary_worst": "När aktivt experimenterande inte fungerar optimalt för dig, kan du ha en tendens att agera utan att noggrant överväga konsekvenserna. Du kan ibland ta förhastade beslut utan att reflektera, vilket kan leda till misstag. I din strävan att testa nya idéer kan du missa att utvärdera resultat och därmed upprepa samma fel."
+      "summary_worst": "Aktiv experimentering är inte en lämplig stil för dig. Att agera utan noggrant övervägande av konsekvenserna leder till hastiga beslut och misstag. Drivet att prova nya idéer hindrar ofta en grundlig utvärdering av resultaten, vilket orsakar upprepade fel. Denna metod passar inte bra med dina styrkor, eftersom den kräver mer reflektion och måttfullt agerande än vad du naturligt föredrar."
     }
   }
 }

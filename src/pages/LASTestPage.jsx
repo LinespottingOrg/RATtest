@@ -11,6 +11,7 @@ import Button from '../components/Button'
 import LASQuestions from '../components/lasComponents/LASQuestions'
 
 function LASTestPage({ handleTranslation, isEnglish }) {
+
   /* i18n translation utility */
   const { t } = useTranslation()
 
@@ -70,6 +71,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
   const handleShowResults = () => {
     setTestFinished(true)
   }
+
   /* navigates back to the homepage */
   const handleGoBackClick = () => {
     navigate('/')
@@ -146,7 +148,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
               )}
 
               <progress
-                className="progress progress-primary w-24 md:w-56 mx-6 self-center"
+                className="progress progress-primary w-20 md:w-56 mx-6 self-center"
                 value={currentSetId}
                 max="9"
                 data-testid="progressbar"
