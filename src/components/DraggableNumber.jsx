@@ -2,6 +2,7 @@ import React from "react";
 import { useDrag } from "react-dnd";
 
 function DraggableNumber({ id, number, valid }) {
+  /* allows dragging of the number and holds its value */
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "NUMBER",
     item: { id, number },

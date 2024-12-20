@@ -1,27 +1,44 @@
-import React from 'react'
-import DraggableNumberContainer from '../DraggableNumberContainer'
-import DroppableInputContainer from '../DroppableInputContainer'
+import React from "react";
+import DraggableNumberContainer from "../DraggableNumberContainer";
+import DroppableInputContainer from "../DroppableInputContainer";
 
 function LASQuestions({ data, currentSetId, handleDataChange }) {
-  const options = ['concrete_experiences', 'reflective_observation', 'abstract_thinking', 'active_experimentation']
+  /* the options from the test data used to handle the rendering and calculations for the DroppableInputs */
+
+  //FIXME: move into a separate file
+  const options = [
+    "concrete_experiences",
+    "reflective_observation",
+    "abstract_thinking",
+    "active_experimentation",
+  ];
+
   return (
     <div>
       <div className="space-y-4" data-testid="draggableNumberContainer">
-        <DraggableNumberContainer amount={4} data={data} currentSetId={currentSetId} test={'LAS'} />
+        <DraggableNumberContainer
+          amount={4}
+          data={data}
+          currentSetId={currentSetId}
+          test={"LAS"}
+        />
       </div>
       <div className="flex my-8">
-        <ul className="flex flex-col md:flex-row w-full" data-testid="droppableInputContainer">
+        <ul
+          className="flex flex-col md:flex-row w-full"
+          data-testid="droppableInputContainer"
+        >
           <DroppableInputContainer
             data={data}
             currentSetId={currentSetId}
             options={options}
             handleDataChange={handleDataChange}
-            test={'LAS'}
+            test={"LAS"}
           />
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default LASQuestions
+export default LASQuestions;

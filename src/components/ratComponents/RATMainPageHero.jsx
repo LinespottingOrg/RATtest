@@ -5,17 +5,25 @@ import Button from "../Button";
 import { useTranslation } from "react-i18next";
 
 function RATMainPageHero({ handleTranslation, isEnglish }) {
-  const navigate = useNavigate();
+  /* i18n translation utility */
   const { t } = useTranslation();
+
+  /* React navigation utility */
+  const navigate = useNavigate();
+
+  /* handles clicking on start test */
   const handleStartTestClick = () => {
-    navigate("/rat/test");
+    navigate("rat/test");
   };
+
+  //TODO: create a description text component
+  //TODO: create the translation toggle component
   return (
     <div className="flex flex-col justify-between text-center md:w-1/2 md:h-1024 p-4 text-customTextColor">
       <h1 className="text-2xl md:text-4xl mb-2 font-bold">
         Relational Awareness Theory
       </h1>
-      <hr className="border-t-2 border-customBlue mb-2" />
+      <hr className="border-t-2 border-primary mb-2" />
       <div className="flex-grow">
         <label className="flex cursor-pointer gap-2 justify-center">
           <span className="label-text">Swedish</span>

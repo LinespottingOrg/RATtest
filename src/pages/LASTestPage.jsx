@@ -11,12 +11,23 @@ import Button from '../components/Button'
 import LASQuestions from '../components/lasComponents/LASQuestions'
 
 function LASTestPage({ handleTranslation, isEnglish }) {
-  const [testFinished, setTestFinished] = useState(false)
-  const [data, setData] = useState(lasData)
-  const [currentSetId, setCurrentSetId] = useState(1)
-  const navigate = useNavigate()
+
+  /* i18n translation utility */
   const { t } = useTranslation()
 
+  /* React navigation utility */
+  const navigate = useNavigate()
+
+  /* state to set the test as finished to render the result page */
+  const [testFinished, setTestFinished] = useState(false)
+
+  /* state to hold the data for rendering and calculating results */
+  const [data, setData] = useState(lasData)
+
+  /* state to hold the current set id of the data to render the prompts and valid numbers */
+  const [currentSetId, setCurrentSetId] = useState(1)
+
+  /* handles and updates the dataset for the current test by using the data states and the currentSetId state*/
   const handleDataChange = (setId, promptKey, newValue, inputSet) => {
     setData((prevData) => {
       const updatedSet = {
@@ -32,7 +43,6 @@ function LASTestPage({ handleTranslation, isEnglish }) {
       }
 
       const usedAmount = Object.values(updatedSet.options).reduce((sum, option) => sum + option.value, 0)
-
       const answered = usedAmount === 10
 
       return {
@@ -45,20 +55,24 @@ function LASTestPage({ handleTranslation, isEnglish }) {
     })
   }
 
+  /* handles rendering the next set of data */
   const handleRenderNextSet = () => {
     if (currentSetId != 9) {
       setCurrentSetId((prevId) => prevId + 1)
     }
   }
 
+  /* handles rendering the previous set of data */
   const handleRenderPreviousSet = () => {
     setCurrentSetId((prevId) => prevId - 1)
   }
 
+  /* handles switching the state to render the result screen */
   const handleShowResults = () => {
     setTestFinished(true)
   }
 
+  /* navigates back to the homepage */
   const handleGoBackClick = () => {
     navigate('/')
   }
@@ -149,6 +163,8 @@ function LASTestPage({ handleTranslation, isEnglish }) {
                 </button>
               )}
             </div>
+            {/********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET,
+            REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             <button
               data-testid="testSetButton"
               className="btn btn-secondary hidden"
@@ -163,6 +179,8 @@ function LASTestPage({ handleTranslation, isEnglish }) {
             >
               Test: SetAnswers for set {currentSetId}
             </button>
+            {/********** SETTING TEST ANSWERS IN DATA & RENDERING NEXT SET,
+            REMOVE/SET "hidden" TO SHOW/HIDE ****************************/}
             {data[currentSetId].answered && currentSetId === 9 ? (
               <Button
                 prompt={t('testpage.result_button')}
