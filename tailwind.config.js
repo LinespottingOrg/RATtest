@@ -1,12 +1,6 @@
-import daisyui from 'daisyui'
-import { light } from 'daisyui/src/theming/themes'
-
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}', // Add all paths where Tailwind classes are used
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -37,13 +31,13 @@ export default {
       },
     },
   },
-  plugins: [daisyui],
+  plugins: [require('daisyui')],
   daisyui: {
     themes: [
       {
         light: {
-          ...light,
-          primary: '#2EB9F2', // Customize theme if needed
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#2EB9F2',
         },
       },
     ],
