@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBlue: '#2EB9F2',
-        customTextColor: '#1E1E1E',
+        customBlue: '#2EB9F2', // Custom primary color
+        customTextColor: '#1E1E1E', // Example custom color
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -33,13 +33,12 @@ export default {
       },
     },
   },
-  plugins: [daisyui], // DaisyUI plugin
+  plugins: [daisyui],
   daisyui: {
     themes: [
       {
         light: {
-          ...require('daisyui/src/colors/themes')['[data-theme=light]'], // Spread default light theme
-          primary: '#2EB9F2', // Set your custom primary color here
+          primary: '#2EB9F2', // Custom primary color
         },
       },
     ],
