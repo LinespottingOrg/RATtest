@@ -1,0 +1,299 @@
+{
+  "homepage": {
+    "rat": {
+      "description_text_1": "Relational Awareness Theory (RAT) är en ramverk utformad för att hjälpa individer och organisationer att bättre förstå dynamiken i sina relationer. Denna teori betonar att våra interaktioner formas av mer än bara personliga drivkrafter – våra handlingar påverkas djupt av de relationer vi har med andra, vare sig det är i personliga, sociala eller professionella sammanhang.",
+      "description_text_2": "Målet med Relational Awareness Theory är att hjälpa individer att erkänna komplexiteten i relationer, vilket leder till mer meningsfulla interaktioner, förbättrad kommunikation och djupare kopplingar. Den ger också ett värdefullt perspektiv för att förstå konflikt, samarbete och ledarskap i olika sociala strukturer, såsom på arbetsplatsen eller inom familjer."
+    },
+    "las": {
+      "description_text_1": "Upptäck dina unika inlärningspreferenser med vår inlärningsstilsbedömning! Denna insiktsfulla bedömning hjälper dig att förstå hur du bäst tar till dig, bearbetar och behåller information. Genom att identifiera dina dominerande inlärningsstilar kan du anpassa dina utbildningsupplevelser för att öka din inlärningseffektivitet och effektivitet.",
+      "description_text_2": "Inlärningsstilsbedömningen består av en serie enkla frågor utformade för att avslöja dina föredragna inlärningsmetoder. När du har slutfört den får du en detaljerad profil som belyser din inlärningsstil, vilket gör att du kan anta strategier som spelar på dina styrkor."
+    },
+    "start_button": "Starta Test"
+  },
+  "resultpage": {
+    "end_button": "Avsluta Test",
+    "mail_button": "Resultat På Mail",
+    "mail_prompt": "Psst...vill du ha resultatet på mail?",
+    "conflict": "Vid konflikt",
+    "non_conflict": "När allt är bra",
+    "learning_best": "Bäst för dig",
+    "learning_worst": "Sämst för dig",
+    "return": "Backa",
+    "modal": {
+      "heading": "Få resultat på mail?",
+      "send_button": "Skicka",
+      "discard_button": "Avbryt",
+      "confirmation": "Resultatet har skickats!"
+    }
+  },
+  "testpage": {
+    "rat": {
+      "heading": "Testet består av 20 frågor och varje fråga börjar med en ofullständig mening följd av tre alternativ.",
+      "instruction_1": "Fördela 10 poäng bland de tre alternativen för att belysa din ståndpunkt i vart och ett av de tre förslagen.",
+      "instruction_2": "Använd alltid samtliga 10 poäng, aldrig fler eller färre än 10 poäng. Du får använda 0 i ett alternativ."
+    },
+    "las": {
+      "heading": "Nedan kommer du få se 9 olika rader med fyra ord i varje rad. Jämför orden i varje uppsättning och rangordna dem enligt följande:",
+      "instruction_1": "Ge 4 poäng till det ord som bäst beskriver din inlärningsstil.",
+      "instruction_2": "Ge 3 poäng till det ord som näst bäst beskriver din inlärningsstil.",
+      "instruction_3": "Ge 2 poäng till det ord som näst minst karakteriserar hur du lär dig.",
+      "instruction_4": "Ge 1 poäng till det ord som minst beskriver din inlärningsstil.",
+      "description_1": "Kontrollera att du sätter olika rangordning på vart och ett av de fyra olika orden i varje uppsättning.",
+      "description_2": "Gör inga garderingar.  Fundera inte för länge på varje rad, arbeta spontant.",
+      "description_3": "Du kan tycka att det är svårt, men rangordna ändå."
+    },
+    "drag_and_drop": "Drag och släpp dina svar.",
+    "result_button": "Resultat"
+  },
+  "data": {
+    "rat": {
+      "1": {
+        "statement": "Jag mår bäst när jag...",
+        "options": {
+          "helper": "hjälper andra att göra vad de vill göra",
+          "influence": "får andra att göra det jag vill göra",
+          "autonomy": "gör vad jag vill göra utan att behöva tänka på andra"
+        }
+      },
+      "2": {
+        "statement": "Mestadels är jag benägen att vara...",
+        "options": {
+          "helper": "en känslig person som är snar att bemöta andra människors önskemål",
+          "influence": "en energisk person som är snar att ta tillvara möjligheter",
+          "autonomy": "en praktisk person som är noga med att inte rusa iväg innan jag är färdig med det jag håller på med"
+        }
+      },
+      "3": {
+        "statement": "När jag för första gången möter andra människor är jag mestadels benägen att vara...",
+        "options": {
+          "helper": "angelägen att få reda på om dom tycker om mig",
+          "influence": "synnerligen nyfiken att lista ut om det är någonting för mig",
+          "autonomy": "artigt försiktig tills jag kommit på vad de väntar sig av mig"
+        }
+      },
+      "4": {
+        "statement": "Mestadels tycker jag själv att jag är...",
+        "options": {
+          "helper": "en trevlig person som andra vanligen kan räkna med ger en hjälpande hand",
+          "influence": "en stark person som är ett föredöme för andra",
+          "autonomy": "en tänkande person som studerar saker och ting noggrant innan jag handlar"
+        }
+      },
+      "5": {
+        "statement": "Jag känner mig mest nöjd när...",
+        "options": {
+          "helper": "större beslut har fattats av andra och hur jag kan bidra är uppenbart",
+          "influence": "andra räknar med att jag fattar större beslut och tala om för dem vad de ska göra",
+          "autonomy": "jag har haft tid att sätta mig in i ett större beslut och själv bestämt handlingsgången"
+        }
+      },
+      "6": {
+        "statement": "Människor som verkligen känner mig ser mig som en person som de kan räkna med",
+        "options": {
+          "helper": "att lita på och att jag alltid när lojal mot dem",
+          "influence": "att vara full av ambition och initiativ",
+          "autonomy": "att vara osviklig i mina övertygelser och principer"
+        }
+      },
+      "7": {
+        "statement": "Det är mest likt mig att...",
+        "options": {
+          "helper": "göra mitt allra bästa och lita på att andra uppskattar min medverkan",
+          "influence": "inte missa att 'höras' vid lägliga tillfällen och att påverka beslut",
+          "autonomy": "att vara lugn, praktisk och säker på vad jag gör"
+        }
+      },
+      "8": {
+        "statement": "Jag skulle vilja beskriva mig själv som en person som mestadels är...",
+        "options": {
+          "helper": "vänlig, öppen och som ser någonting gott i varje människa",
+          "influence": "energisk, självsäker och som ser tillfällen andra missar",
+          "autonomy": "försiktig och renhårig och som står för sitt ord"
+        }
+      },
+      "9": {
+        "statement": "Jag är mest nöjd när jag får vara...",
+        "options": {
+          "helper": "ett stöd för en stark ledare som jag har förtroende för",
+          "influence": "den som står för ledarskapet och som andra önskar följa",
+          "autonomy": "varken en ledare eller en som följer strömmen utan en som går sina egna självständiga vägar"
+        }
+      },
+      "10": {
+        "statement": "När jag är mitt rätta jag tycker jag bäst om att...",
+        "options": {
+          "helper": "se andra dra nytta av det som jag har lyckats lära dem",
+          "influence": "se andra vända sig till mig för att jag skall vägleda och bestämma tonen",
+          "autonomy": "vara in egen chef och göra saker för mig själv och av mig själv"
+        }
+      },
+      "11": {
+        "statement": "När jag blir motarbetad är jag mest benägen att...",
+        "options": {
+          "helper": "strunta i mina egna intressen och göromål för att vara hjälpsam",
+          "influence": "vara stark och strida för mina egna rättigheter",
+          "autonomy": "vara dubbelt försiktig och försöka lägga band på mig"
+        }
+      },
+      "12": {
+        "statement": "Om jag beslutar att jag vill övervinna någons motstånd försöker jag att...",
+        "options": {
+          "helper": "ändra på det jag gör och försdöka att göra det mer lättfattligt för honom",
+          "influence": "finna luckorna i hans bevisföring och trycka på mina starka argument",
+          "autonomy": "vädja till hans sunda förnuft för logiskt och ärligt spel"
+        }
+      },
+      "13": {
+        "statement": "När jag har att göra med besvärliga människor brukar jag för det mesta...",
+        "options": {
+          "helper": "tycka det är lättast att hålla med dem för stunden",
+          "influence": "utmana dem för överbevisning",
+          "autonomy": "respektera deras synpunkter och vänta mig detsamma gentemot mig"
+        }
+      },
+      "14": {
+        "statement": "När någon verkligen har någon annan mening mot vad jag har brukar jag...",
+        "options": {
+          "helper": "ge upp och göra som han vill om det inte är någonting mycket angeläget för mig",
+          "influence": "utmana honom omedelbart och anföra så starka skäl som möjligt",
+          "autonomy": "stå avvaktande tills dess jag är säker på min sak"
+        }
+      },
+      "15": {
+        "statement": "När någon öppet sätter sig emot mig brukar jag vanligtvis...",
+        "options": {
+          "helper": "ge upp för husfridens skull och lita på att han är renhårig",
+          "influence": "inse faktum att det är en strid och ge mig katten på att vinna",
+          "autonomy": "försöka dra mig undan kompanjonskapet och återgå till mina egna intressen"
+        }
+      },
+      "16": {
+        "statement": "Om jag inte får ut det jag väntar mig av ett kamratskap är jag mest benägen att...",
+        "options": {
+          "helper": "saker och ting ordnar upp sig inom rimlig tid",
+          "influence": "driva på mera övertygande för att få som jag vill",
+          "autonomy": "avstå från kamratskap och leta någon annanstans efter det som jag är ute efter"
+        }
+      },
+      "17": {
+        "statement": "När jag är besviken på en annan person är jag mest benägen att...",
+        "options": {
+          "helper": "låta mina egna intressen komma i andra hand och vänta mig att mina ansträngningar är till god nytta",
+          "influence": "ta strid och göra honom uppmärksam på det jag inte gillar",
+          "autonomy": "inte reagera alltför snabbt och ge honom en chans att rätta till"
+        }
+      },
+      "18": {
+        "statement": "När någon insisterar på att få sin vilja igenom brukar jag...",
+        "options": {
+          "helper": "sätta mina egna önskemål åt sidan för ögonblicket och tillmötesgå honom",
+          "influence": "ta upp argument i motsatt riktning och försöka få honom att ändra sig",
+          "autonomy": "respektera hans rätt att få igenom sina intressen så länge inte mitt verksamhetsområde blir lidande"
+        }
+      },
+      "19": {
+        "statement": "När någon öppet kritiserar mig är jag mest benägen att...",
+        "options": {
+          "helper": "försöka lugna honom och dämpa hans ilska mot mig",
+          "influence": "bli förnärmad och starkt ifrågasätta hans rätt att kritisera mig",
+          "autonomy": "bli dubbelt så försiktig och omsorgsfullt bena upp varje beskyllning"
+        }
+      },
+      "20": {
+        "statement": "Om någon tydligt missbrukat mitt förtroende brukar jag visa att jag...",
+        "options": {
+          "helper": "tycker att han har gjort mera skada för sig själv än han har gjort mig",
+          "influence": "blir arg på honom och försöker sedan lösa problemen",
+          "autonomy": "försöker komma underfund med vad det var som gick snett och försöker undvika att det upprepas i framtiden"
+        }
+      }
+    },
+    "las": {
+      "options": {
+        "concrete_experiences": {
+          "p1": "prioritera",
+          "p2": "mottaga",
+          "p3": "känna",
+          "p4": "acceptera",
+          "p5": "intuition",
+          "p6": "konkretisera",
+          "p7": "nuorientera",
+          "p8": "upplevelse",
+          "p9": "känslor"
+        },
+        "reflective_observation": {
+          "p1": "pröva",
+          "p2": "uppmärksamma",
+          "p3": "betrakta",
+          "p4": "relatera",
+          "p5": "svara",
+          "p6": "observera",
+          "p7": "reflektera",
+          "p8": "observation",
+          "p9": "avvakta"
+        },
+        "abstract_thinking": {
+          "p1": "sammanfatta",
+          "p2": "analysera",
+          "p3": "tänka",
+          "p4": "värdera",
+          "p5": "logik",
+          "p6": "teoretisera",
+          "p7": "framtidsorientera",
+          "p8": "begrepp",
+          "p9": "rationell"
+        },
+        "active_experimentation": {
+          "p1": "praktisera",
+          "p2": "opartisk",
+          "p3": "göra",
+          "p4": "riskera",
+          "p5": "fråga",
+          "p6": "aktivera",
+          "p7": "tillämpa",
+          "p8": "experiment",
+          "p9": "engagerad"
+        }
+      }
+    }
+  },
+  "awareness_types": {
+    "selfless_nurturing": {
+      "type": "Osjälvisk & Omtänksam",
+      "animal": "Sankt Bernhardshund",
+      "summary": "Den osjälviska och omtänksamma typen förkroppsligar en medkännande och omhändertagande anda, likt en Sankt Bernhardshund som är känd för sin lojalitet och skyddande natur. Denna person finner djup tillfredsställelse i att skapa positiva relationer och säkerställa att andra omkring dem känner sig trygga, glada och förstådda. De värdesätter empati högt och drivs av en känsla av ansvar för att lyfta de i behov, ofta genom att sätta andras behov framför sina egna."
+    },
+    "assertive_direct": {
+      "type": "Självsäker & Direkt",
+      "animal": "Lejon",
+      "summary": "Den självsäkra och direkta typen utstrålar självförtroende, styrka och en naturlig karisma som drar andra till dem, likt ett lejon som ofta ses som 'djungelns kung'. Individer med denna medvetenhetstyp är inte rädda för att ta ledningen och sätta upp tydliga, avgörande vägar för sig själva och de omkring dem. De värderar ärlighet och är inte rädda för att uttrycka sina tankar direkt, då de tror att öppenhet leder till effektivitet. Deras närvaro är ofta inspirerande, och de uppmuntrar andra att lita på deras vägledning och följa deras exempel."
+    },
+    "analytical_independent": {
+      "type": "Analytisk & Självständig",
+      "animal": "Uggla",
+      "summary": "Den analytiska och självständiga typen är en djup tänkare med ett skarpt sinne för logik och en törst efter förståelse, ofta symboliserad av den visa ugglan. De föredrar att observera, analysera och reflektera, och finner ro i ensamhet där de kan följa sina intellektuella intressen utan distraktion. Dessa individer är mycket självförsörjande, värderar oberoende och personlig autonomi, eftersom de tror att ett välgrundat sinne är nyckeln till att fatta kloka beslut. Kända för sitt metodiska tillvägagångssätt, utmärker de sig i uppgifter som kräver kritiskt tänkande, uppmärksamhet på detaljer och noggrann planering."
+    }
+  },
+  "learning_styles": {
+    "concrete_experiences": {
+      "style": "Konkreta Upplevelser",
+      "summary_best": "Du lär dig bäst genom att vara direkt involverad i själva upplevelsen. Att känna, observera och vara närvarande i nuet är centralt för dig. Praktiska aktiviteter, där du kan använda dina sinnen och få direkt feedback, hjälper dig att ta till dig kunskap. Du drar lärdom av att interagera med omvärlden och värderar insikter från verkliga situationer.",
+      "summary_worst": "Konkreta upplevelser är utmanande för dig och gör det svårt att ta till sig information som bygger på teoretiskt eller abstrakt tänkande. Utan en direkt koppling till verkliga erfarenheter minskar ditt engagemang, och abstrakta teorier känns ointressanta eller svåra att förstå. Att enbart observera utan att delta leder till bristande intresse och gör det svårare för dig att hålla fokus."
+    },
+    "reflective_observation": {
+      "style": "Reflekterande Observation",
+      "summary_best": "Du föredrar att ta ett steg tillbaka för att observera och reflektera över en situation innan du drar några slutsatser. Genom att betrakta olika perspektiv och detaljer skapar du en djupare förståelse. För dig är reflektion viktigt, och du känner dig mer bekväm när du kan analysera i lugn och ro innan du agerar.",
+      "summary_worst": "Reflekterande observation fungerar inte optimalt för dig, vilket leder till att du fastnar i analys och överväger alternativ utan att agera. Beslutsfattande blir utdraget, och du tenderar att undvika risker, då du känner dig mer bekväm med att bara observera. Överdriven reflektion hindrar dig från att prova nya tillvägagångssätt och gå framåt."
+    },
+    "abstract_thinking": {
+      "style": "Abstrakt Tänkande",
+      "summary_best": "Du är en person som lär dig bäst genom att använda logik och intellekt för att förstå koncept och teorier. Du är nyfiken på att utforska underliggande principer och system och gillar att arbeta med abstrakta idéer. För dig är det viktigt att skapa en teoretisk förståelse och struktur i dina kunskaper.",
+      "summary_worst": "Abstrakt tänkande fungerar inte optimalt för dig, vilket gör det svårt att engagera sig i praktiska eller vardagliga uppgifter. Du fastnar ofta i teoriserande och analys, vilket gör det svårt att tillämpa kunskap på ett praktiskt sätt. Att fokusera för mycket på detaljer och teorier får dig att tappa bort den större bilden."
+    },
+    "active_experimentation": {
+      "style": "Aktivt Experimenterande",
+      "summary_best": "Du lär dig bäst genom att aktivt testa idéer och teorier i praktiken. Du är handlingsorienterad och tycker om att prova nya tillvägagångssätt och lösningar. För dig är det viktigt att snabbt kunna se resultaten av dina handlingar och anpassa dig därefter, vilket gör att du kan omsätta din kunskap i praktiska handlingar.",
+      "summary_worst": "Aktiv experimentering är inte en lämplig stil för dig. Att agera utan noggrant övervägande av konsekvenserna leder till hastiga beslut och misstag. Drivet att prova nya idéer hindrar ofta en grundlig utvärdering av resultaten, vilket orsakar upprepade fel. Denna metod passar inte bra med dina styrkor, eftersom den kräver mer reflektion och måttfullt agerande än vad du naturligt föredrar."
+    }
+  }
+}
