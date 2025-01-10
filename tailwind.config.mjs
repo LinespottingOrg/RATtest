@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.mjs
+import daisyui from 'daisyui' // Import DaisyUI
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -31,12 +33,12 @@ export default {
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [daisyui], // DaisyUI plugin
   daisyui: {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['light'],
+          ...daisyui.themes['light'],
           primary: '#2EB9F2',
         },
       },
