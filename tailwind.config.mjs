@@ -35,6 +35,13 @@ export default {
   },
   plugins: [daisyui], // DaisyUI plugin
   daisyui: {
-    themes: ['light'], // You can specify themes here
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/colors/themes')['[data-theme=light]'], // Spread default light theme
+          primary: '#2EB9F2', // Set your custom primary color here
+        },
+      },
+    ],
   },
 }
