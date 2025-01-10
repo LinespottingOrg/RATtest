@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui';
+import lightTheme from 'daisyui/src/theming/themes';
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -27,19 +30,19 @@ export default {
         mainLogoSize: '350px',
         testLeftLogoSize: '250px',
         testRightLogoSize: '220px',
-        appheight: 1024,
+        appheight: '1024px',
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [daisyui],
   daisyui: {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['light'],
+          ...lightTheme['[data-theme=light]'],
           primary: '#2EB9F2',
         },
       },
     ],
   },
-}
+};
