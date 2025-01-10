@@ -1,4 +1,5 @@
 import daisyui from 'daisyui'
+import { light } from 'daisyui/src/theming/themes'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -41,7 +42,7 @@ export default {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['light'],
+          ...light,
           primary: '#2EB9F2', // Customize theme if needed
         },
       },
