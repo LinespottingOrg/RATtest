@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import LasLogo1 from '../assets/LAS_LOGO_1.png'
-import LasLogo3 from '../assets/LAS_LOGO_3.png'
 import { FaAngleLeft } from 'react-icons/fa6'
 import { FaAngleRight } from 'react-icons/fa6'
 import lasData from '../data/lasTestData'
@@ -11,7 +9,6 @@ import Button from '../components/Button'
 import LASQuestions from '../components/lasComponents/LASQuestions'
 
 function LASTestPage({ handleTranslation, isEnglish }) {
-
   /* i18n translation utility */
   const { t } = useTranslation()
 
@@ -98,7 +95,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
           </label>
         </div>
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
-          <img src={LasLogo1} alt="LAS LOGO 1" className="w-full h-full object-contain" />
+          <img src="/assets/LAS_LOGO_1.png" alt="LAS LOGO 1" className="w-full h-full object-contain" />
         </div>
       </div>
       {testFinished ? (
@@ -110,7 +107,7 @@ function LASTestPage({ handleTranslation, isEnglish }) {
           <div className="flex md:flex-row flex-grow">
             <div className="hidden md:flex w-20% h-full items-center justify-center">
               <div className="h-testRightLogoSize w-testRightLogoSize">
-                <img src={LasLogo3} alt="LAS LOGO 3" className="w-full h-full object-contain " />
+                <img src="/assets/LAS_LOGO_3.png" alt="LAS LOGO 3" className="w-full h-full object-contain " />
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">

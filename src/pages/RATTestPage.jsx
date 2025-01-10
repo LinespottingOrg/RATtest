@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import RATLogo1 from '../assets/RAT_LOGO_1.png'
-import RATLogo3 from '../assets/RAT_LOGO_3.png'
 import { FaAngleLeft } from 'react-icons/fa6'
 import { FaAngleRight } from 'react-icons/fa6'
 import RATQuestions from '../components/ratComponents/RATQuestions'
@@ -104,7 +102,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
           </label>
         </div>
         <div className="mt-auto h-testLeftLogoSize w-testLeftLogoSize mx-auto">
-          <img src={RATLogo1} alt="rat logo 1" className="w-full h-full object-contain" />
+          <img src="/assets/RAT_LOGO_1.png" alt="rat logo 1" className="w-full h-full object-contain" />
         </div>
       </div>
       {testFinished ? (
@@ -116,7 +114,7 @@ function RATTestPage({ handleTranslation, isEnglish }) {
           <div className="flex md:flex-row flex-grow">
             <div className="hidden md:flex w-20% h-full items-center justify-center">
               <div className="h-testRightLogoSize w-testRightLogoSize">
-                <img src={RATLogo3} alt="rat logo 3" className="w-full h-full object-contain" />
+                <img src="/assets/RAT_LOGO_3.png" alt="rat logo 3" className="w-full h-full object-contain" />
               </div>
             </div>
             <div className="md:w-80% my-auto p-4 flex-grow">
