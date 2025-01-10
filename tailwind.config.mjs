@@ -1,5 +1,5 @@
 // tailwind.config.mjs
-import daisyui from 'daisyui' // Import DaisyUI
+import daisyui from 'daisyui'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -35,13 +35,6 @@ export default {
   },
   plugins: [daisyui], // DaisyUI plugin
   daisyui: {
-    themes: [
-      {
-        light: {
-          ...daisyui.themes['light'],
-          primary: '#2EB9F2',
-        },
-      },
-    ],
+    themes: ['light'], // You can specify themes here
   },
 }
